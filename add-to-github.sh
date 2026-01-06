@@ -1,0 +1,12 @@
+#!/bin/bash
+echo "To add to GitHub Secrets:"
+echo "1. Go to: https://github.com/Juganu953/arex-platform-final/settings/secrets/actions"
+echo "2. Click 'New repository secret'"
+echo "3. Name: GOOGLE_APPLICATION_CREDENTIALS_JSON"
+echo "4. Value: Paste the base64 string above"
+echo "5. Click 'Add secret'"
+echo ""
+echo "Also add FIREBASE_TOKEN:"
+echo "1. Run: firebase login:ci"
+echo "2. Get token"
+echo "3. Add as secret named FIREBASE_TOKEN"
