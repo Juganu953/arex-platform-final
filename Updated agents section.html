@@ -1,0 +1,3211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arex Agent Portal - Premium Golden Theme</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* ALL STYLES FROM ORIGINAL agents.html REMAIN THE SAME */
+        :root {
+            --primary-gold: #FFD700;
+            --primary-black: #1a1a1a;
+            --mpesa-green: #00A86B;
+            --accent-blue: #0066CC;
+            --danger-red: #D32F2F;
+            --warning-orange: #F57C00;
+            --success-green: #388E3C;
+            --light-gray: #f5f5f5;
+            --medium-gray: #e0e0e0;
+            --dark-gray: #424242;
+            --border-radius: 12px;
+            --box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --bronze: #CD7F32;
+            --silver: #C0C0C0;
+            --gold: #FFD700;
+            --diamond: #B9F2FF;
+            --elite: #9B59B6;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+            color: #f5f5f5;
+            min-height: 100vh;
+        }
+        
+        .container {
+            display: flex;
+            min-height: 100vh;
+        }
+        
+        /* Sidebar Styles */
+        .sidebar {
+            width: 280px;
+            background: linear-gradient(180deg, #1a1a1a 0%, #0a0a0a 100%);
+            box-shadow: 4px 0 20px rgba(0, 0, 0, 0.3);
+            padding: 25px 15px;
+            display: flex;
+            flex-direction: column;
+            z-index: 10;
+            position: fixed;
+            height: 100vh;
+            overflow-y: auto;
+            border-right: 1px solid rgba(255, 215, 0, 0.1);
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            margin-bottom: 30px;
+            padding-left: 10px;
+        }
+        
+        .logo h2 {
+            background: linear-gradient(45deg, #FFD700, #FFA500);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-size: 28px;
+            margin-left: 15px;
+            font-weight: 800;
+        }
+        
+        .logo .highlight {
+            color: var(--mpesa-green);
+        }
+        
+        .user-profile {
+            display: flex;
+            align-items: center;
+            padding: 20px;
+            background: rgba(255, 215, 0, 0.05);
+            border-radius: var(--border-radius);
+            margin-bottom: 30px;
+            position: relative;
+            border: 1px solid rgba(255, 215, 0, 0.1);
+        }
+        
+        .tier-badge {
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            background: linear-gradient(135deg, var(--primary-gold), var(--primary-black));
+            color: var(--primary-black);
+            padding: 6px 15px;
+            border-radius: 20px;
+            font-size: 11px;
+            font-weight: 800;
+            box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
+            border: 2px solid var(--primary-gold);
+        }
+        
+        .avatar {
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary-gold), var(--primary-black));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary-black);
+            font-weight: bold;
+            font-size: 22px;
+            margin-right: 20px;
+            border: 3px solid var(--primary-gold);
+            box-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
+        }
+        
+        .user-info h3 {
+            font-size: 18px;
+            margin-bottom: 8px;
+            color: var(--primary-gold);
+        }
+        
+        .user-info p {
+            font-size: 13px;
+            color: #aaa;
+        }
+        
+        .menu {
+            flex-grow: 1;
+        }
+        
+        .menu-item {
+            display: flex;
+            align-items: center;
+            padding: 18px 20px;
+            margin-bottom: 10px;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: var(--transition);
+            position: relative;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid transparent;
+        }
+        
+        .menu-item:hover {
+            background: rgba(255, 215, 0, 0.1);
+            border-color: rgba(255, 215, 0, 0.2);
+            transform: translateX(5px);
+        }
+        
+        .menu-item.active {
+            background: linear-gradient(90deg, rgba(255, 215, 0, 0.2), transparent);
+            border-left: 4px solid var(--primary-gold);
+            color: var(--primary-gold);
+        }
+        
+        .menu-item.active i {
+            color: var(--primary-gold);
+        }
+        
+        .menu-item i {
+            margin-right: 18px;
+            font-size: 20px;
+            width: 24px;
+            text-align: center;
+            color: #888;
+        }
+        
+        .badge {
+            background: linear-gradient(135deg, var(--mpesa-green), #00CC88);
+            color: white;
+            font-size: 12px;
+            padding: 4px 10px;
+            border-radius: 20px;
+            margin-left: auto;
+            font-weight: 700;
+            box-shadow: 0 2px 10px rgba(0, 168, 107, 0.3);
+        }
+        
+        .balance-card {
+            background: linear-gradient(135deg, #1a1a1a, #0a0a0a);
+            color: white;
+            padding: 25px;
+            border-radius: var(--border-radius);
+            margin-top: 20px;
+            border: 1px solid rgba(255, 215, 0, 0.1);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+        
+        .balance-card h3 {
+            font-size: 14px;
+            margin-bottom: 10px;
+            color: #aaa;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .balance-card .amount {
+            font-size: 32px;
+            font-weight: 800;
+            margin-bottom: 25px;
+            background: linear-gradient(45deg, #FFD700, #FFA500);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .btn {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            border-radius: var(--border-radius);
+            border: none;
+            font-weight: 700;
+            cursor: pointer;
+            transition: var(--transition);
+            text-align: center;
+            text-decoration: none;
+            font-size: 15px;
+            letter-spacing: 0.5px;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary-gold), #FFA500);
+            color: var(--primary-black);
+            box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
+        }
+        
+        .btn-primary:hover {
+            background: linear-gradient(135deg, #FFC107, #FF8C00);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255, 215, 0, 0.4);
+        }
+        
+        .btn-mpesa {
+            background: linear-gradient(135deg, var(--mpesa-green), #00CC88);
+            color: white;
+            box-shadow: 0 4px 15px rgba(0, 168, 107, 0.3);
+        }
+        
+        .btn-mpesa:hover {
+            background: linear-gradient(135deg, #00CC88, var(--mpesa-green));
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 168, 107, 0.4);
+        }
+        
+        .btn-logout {
+            background: transparent;
+            color: #888;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            margin-top: 15px;
+        }
+        
+        .btn-logout:hover {
+            background: rgba(255, 255, 255, 0.05);
+            color: #fff;
+        }
+        
+        /* Main Content Styles */
+        .main-content {
+            flex: 1;
+            padding: 30px;
+            margin-left: 280px;
+            overflow-y: auto;
+            background: transparent;
+        }
+        
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid rgba(255, 215, 0, 0.1);
+        }
+        
+        .header h1 {
+            background: linear-gradient(45deg, #FFD700, #FFA500);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-size: 32px;
+            font-weight: 800;
+        }
+        
+        .header h1 i {
+            margin-right: 15px;
+        }
+        
+        .status-indicator {
+            display: flex;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 15px 25px;
+            border-radius: var(--border-radius);
+            border: 1px solid rgba(255, 215, 0, 0.1);
+        }
+        
+        .status-indicator .dot {
+            width: 12px;
+            height: 12px;
+            background: linear-gradient(135deg, var(--mpesa-green), #00CC88);
+            border-radius: 50%;
+            margin-right: 15px;
+            box-shadow: 0 0 15px rgba(0, 168, 107, 0.5);
+        }
+        
+        .status-indicator span {
+            font-weight: 600;
+            color: #f5f5f5;
+            font-size: 15px;
+        }
+        
+        /* Dashboard Sections */
+        .dashboard-section {
+            background: rgba(26, 26, 26, 0.8);
+            backdrop-filter: blur(10px);
+            border-radius: var(--border-radius);
+            padding: 30px;
+            margin-bottom: 30px;
+            border: 1px solid rgba(255, 215, 0, 0.1);
+            box-shadow: var(--box-shadow);
+            display: none;
+        }
+        
+        .dashboard-section.active {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid rgba(255, 215, 0, 0.1);
+        }
+        
+        .section-header h2 {
+            background: linear-gradient(45deg, #FFD700, #FFA500);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-size: 24px;
+            font-weight: 700;
+        }
+        
+        .section-header h2 i {
+            margin-right: 15px;
+        }
+        
+        .section-header .btn-small {
+            background: linear-gradient(135deg, var(--primary-gold), #FFA500);
+            color: var(--primary-black);
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-size: 14px;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+            font-weight: 700;
+            transition: var(--transition);
+        }
+        
+        .section-header .btn-small:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255, 215, 0, 0.3);
+        }
+        
+        /* Stats Cards */
+        .stats-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+        
+        .stat-card {
+            background: linear-gradient(135deg, rgba(26, 26, 26, 0.8), rgba(10, 10, 10, 0.8));
+            border-radius: var(--border-radius);
+            padding: 25px;
+            border: 1px solid rgba(255, 215, 0, 0.1);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .stat-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(255, 215, 0, 0.3);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+        }
+        
+        .stat-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-gold), var(--mpesa-green));
+        }
+        
+        .stat-card .label {
+            font-size: 14px;
+            color: #aaa;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .stat-card .value {
+            font-size: 28px;
+            font-weight: 800;
+            margin-bottom: 15px;
+            color: #f5f5f5;
+        }
+        
+        .stat-card .subtext {
+            font-size: 13px;
+            color: #888;
+        }
+        
+        /* Grid Layouts */
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+        }
+        
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+        
+        .grid-4 {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 25px;
+        }
+        
+        /* Card Styles */
+        .card {
+            background: linear-gradient(135deg, rgba(26, 26, 26, 0.8), rgba(10, 10, 10, 0.8));
+            border-radius: var(--border-radius);
+            padding: 25px;
+            border: 1px solid rgba(255, 215, 0, 0.1);
+            transition: var(--transition);
+        }
+        
+        .card:hover {
+            border-color: rgba(255, 215, 0, 0.3);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+        }
+        
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 25px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid rgba(255, 215, 0, 0.1);
+        }
+        
+        .card-title {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--primary-gold);
+        }
+        
+        /* Table Styles */
+        .table-responsive {
+            overflow-x: auto;
+            border-radius: var(--border-radius);
+            border: 1px solid rgba(255, 215, 0, 0.1);
+        }
+        
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: rgba(26, 26, 26, 0.8);
+        }
+        
+        .data-table th {
+            background: linear-gradient(135deg, rgba(255, 215, 0, 0.1), rgba(0, 168, 107, 0.1));
+            padding: 18px;
+            text-align: left;
+            font-weight: 700;
+            color: var(--primary-gold);
+            border-bottom: 2px solid rgba(255, 215, 0, 0.2);
+        }
+        
+        .data-table td {
+            padding: 18px;
+            border-bottom: 1px solid rgba(255, 215, 0, 0.05);
+            color: #ddd;
+        }
+        
+        .data-table tr:hover {
+            background: rgba(255, 215, 0, 0.05);
+        }
+        
+        /* Tag Styles */
+        .tag {
+            display: inline-flex;
+            align-items: center;
+            padding: 6px 15px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 700;
+            gap: 6px;
+        }
+        
+        .tag-success {
+            background: linear-gradient(135deg, rgba(0, 168, 107, 0.2), rgba(0, 204, 136, 0.2));
+            color: #00CC88;
+            border: 1px solid rgba(0, 168, 107, 0.3);
+        }
+        
+        .tag-warning {
+            background: linear-gradient(135deg, rgba(245, 124, 0, 0.2), rgba(255, 152, 0, 0.2));
+            color: #FF9800;
+            border: 1px solid rgba(245, 124, 0, 0.3);
+        }
+        
+        .tag-danger {
+            background: linear-gradient(135deg, rgba(211, 47, 47, 0.2), rgba(244, 67, 54, 0.2));
+            color: #FF5252;
+            border: 1px solid rgba(211, 47, 47, 0.3);
+        }
+        
+        .tag-info {
+            background: linear-gradient(135deg, rgba(0, 102, 204, 0.2), rgba(33, 150, 243, 0.2));
+            color: #2196F3;
+            border: 1px solid rgba(0, 102, 204, 0.3);
+        }
+        
+        .tag-primary {
+            background: linear-gradient(135deg, rgba(255, 215, 0, 0.2), rgba(255, 165, 0, 0.2));
+            color: var(--primary-gold);
+            border: 1px solid rgba(255, 215, 0, 0.3);
+        }
+        
+        /* Progress Bar */
+        .progress-bar {
+            height: 12px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 6px;
+            overflow: hidden;
+            margin: 15px 0;
+        }
+        
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--primary-gold), var(--mpesa-green));
+            border-radius: 6px;
+            transition: width 0.5s ease;
+        }
+        
+        /* Form Elements */
+        .form-group {
+            margin-bottom: 25px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: 600;
+            color: #ddd;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 215, 0, 0.1);
+            border-radius: 8px;
+            font-size: 16px;
+            color: #f5f5f5;
+            transition: var(--transition);
+        }
+        
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary-gold);
+            box-shadow: 0 0 0 3px rgba(255, 215, 0, 0.1);
+        }
+        
+        /* Tabs */
+        .tabs {
+            display: flex;
+            border-bottom: 1px solid rgba(255, 215, 0, 0.1);
+            margin-bottom: 25px;
+            flex-wrap: wrap;
+        }
+        
+        .tab {
+            padding: 15px 25px;
+            cursor: pointer;
+            font-weight: 600;
+            color: #888;
+            border-bottom: 3px solid transparent;
+            transition: var(--transition);
+            position: relative;
+        }
+        
+        .tab:hover {
+            color: var(--primary-gold);
+        }
+        
+        .tab.active {
+            color: var(--primary-gold);
+            border-bottom: 3px solid var(--primary-gold);
+        }
+        
+        .tab.active::after {
+            content: '';
+            position: absolute;
+            bottom: -3px;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary-gold), var(--mpesa-green));
+            border-radius: 3px;
+        }
+        
+        .tab-content {
+            display: none;
+            animation: fadeIn 0.5s ease;
+        }
+        
+        .tab-content.active {
+            display: block;
+        }
+        
+        /* Tier Access Indicators */
+        .tier-access {
+            display: inline-flex;
+            align-items: center;
+            padding: 6px 15px;
+            border-radius: 20px;
+            font-size: 11px;
+            font-weight: 800;
+            margin-left: 12px;
+            gap: 6px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .tier-bronze {
+            background: linear-gradient(135deg, var(--bronze), #8B4513);
+            color: white;
+        }
+        
+        .tier-silver {
+            background: linear-gradient(135deg, var(--silver), #A9A9A9);
+            color: var(--primary-black);
+        }
+        
+        .tier-gold {
+            background: linear-gradient(135deg, var(--gold), #FFA500);
+            color: var(--primary-black);
+        }
+        
+        .tier-diamond {
+            background: linear-gradient(135deg, var(--diamond), #87CEEB);
+            color: var(--primary-black);
+        }
+        
+        .tier-elite {
+            background: linear-gradient(135deg, var(--elite), #8E44AD);
+            color: white;
+        }
+        
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(5px);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .modal-content {
+            background: linear-gradient(135deg, #1a1a1a, #0a0a0a);
+            border-radius: var(--border-radius);
+            width: 90%;
+            max-width: 500px;
+            max-height: 80vh;
+            overflow-y: auto;
+            padding: 30px;
+            position: relative;
+            border: 1px solid rgba(255, 215, 0, 0.2);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+            animation: modalSlideIn 0.3s ease;
+        }
+        
+        @keyframes modalSlideIn {
+            from { opacity: 0; transform: translateY(-50px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .modal-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 24px;
+            cursor: pointer;
+            color: #888;
+            transition: var(--transition);
+        }
+        
+        .modal-close:hover {
+            color: var(--primary-gold);
+        }
+        
+        .modal-header {
+            margin-bottom: 25px;
+        }
+        
+        .modal-header h3 {
+            background: linear-gradient(45deg, #FFD700, #FFA500);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-size: 22px;
+        }
+        
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .sidebar {
+                width: 100%;
+                position: static;
+                height: auto;
+            }
+            
+            .main-content {
+                margin-left: 0;
+            }
+            
+            .container {
+                flex-direction: column;
+            }
+            
+            .grid-2, .grid-3, .grid-4 {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .status-indicator {
+                margin-top: 20px;
+                align-self: flex-start;
+            }
+            
+            .section-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .section-header .btn-small {
+                margin-top: 15px;
+            }
+        }
+        
+        /* Utility Classes */
+        .mb-0 { margin-bottom: 0 !important; }
+        .mb-10 { margin-bottom: 10px !important; }
+        .mb-20 { margin-bottom: 20px !important; }
+        .mb-30 { margin-bottom: 30px !important; }
+        .mt-0 { margin-top: 0 !important; }
+        .mt-10 { margin-top: 10px !important; }
+        .mt-20 { margin-top: 20px !important; }
+        .mt-30 { margin-top: 30px !important; }
+        .ml-10 { margin-left: 10px !important; }
+        .mr-10 { margin-right: 10px !important; }
+        .p-20 { padding: 20px !important; }
+        .text-center { text-align: center !important; }
+        .text-right { text-align: right !important; }
+        .text-gold { color: var(--primary-gold) !important; }
+        .text-mpesa { color: var(--mpesa-green) !important; }
+        .text-success { color: #00CC88 !important; }
+        .text-danger { color: #FF5252 !important; }
+        .text-warning { color: #FF9800 !important; }
+        .d-none { display: none !important; }
+        .d-flex { display: flex !important; }
+        .flex-column { flex-direction: column !important; }
+        .align-center { align-items: center !important; }
+        .justify-between { justify-content: space-between !important; }
+        .w-100 { width: 100% !important; }
+        .cursor-pointer { cursor: pointer !important; }
+        
+        /* Enhanced Referral Card */
+        .referral-card {
+            background: linear-gradient(135deg, rgba(26, 26, 26, 0.8), rgba(10, 10, 10, 0.8));
+            border-radius: var(--border-radius);
+            padding: 25px;
+            border: 1px solid rgba(255, 215, 0, 0.1);
+            margin-bottom: 20px;
+            transition: var(--transition);
+        }
+        
+        .referral-card:hover {
+            border-color: rgba(255, 215, 0, 0.3);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+        }
+        
+        /* Fraud Detection Dashboard */
+        .fraud-dashboard {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-bottom: 30px;
+        }
+        
+        .fraud-score {
+            background: linear-gradient(135deg, rgba(26, 26, 26, 0.8), rgba(10, 10, 10, 0.8));
+            border-radius: var(--border-radius);
+            padding: 30px;
+            text-align: center;
+            border: 1px solid rgba(255, 215, 0, 0.1);
+        }
+        
+        .score-circle {
+            width: 150px;
+            height: 150px;
+            margin: 0 auto 25px;
+            position: relative;
+        }
+        
+        .score-fill {
+            fill: none;
+            stroke-width: 10;
+            stroke-linecap: round;
+            transform: rotate(-90deg);
+            transform-origin: 50% 50%;
+        }
+        
+        .score-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 32px;
+            font-weight: 800;
+            color: var(--primary-gold);
+        }
+        
+        .score-label {
+            font-size: 14px;
+            color: #aaa;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        
+        /* Footer */
+        .footer {
+            margin-top: 50px;
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 215, 0, 0.1);
+            color: #888;
+            font-size: 14px;
+        }
+        
+        .footer p {
+            margin-bottom: 10px;
+        }
+        
+        .mpesa-tag {
+            display: inline-flex;
+            align-items: center;
+            background: linear-gradient(135deg, var(--mpesa-green), #00CC88);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-weight: 700;
+            margin: 0 10px;
+            gap: 8px;
+        }
+        
+        /* Glow Effects */
+        .glow-gold {
+            box-shadow: 0 0 30px rgba(255, 215, 0, 0.3);
+        }
+        
+        .glow-green {
+            box-shadow: 0 0 30px rgba(0, 168, 107, 0.3);
+        }
+        
+        .glow-blue {
+            box-shadow: 0 0 30px rgba(0, 102, 204, 0.3);
+        }
+        
+        /* Section content styling */
+        .section-content {
+            display: none;
+        }
+        
+        .section-content.active {
+            display: block;
+        }
+        
+        /* Agent Workspace Specific Styles */
+        .workspace-tool {
+            background: linear-gradient(135deg, rgba(26, 26, 26, 0.8), rgba(10, 10, 10, 0.8));
+            border-radius: var(--border-radius);
+            padding: 20px;
+            border: 1px solid rgba(255, 215, 0, 0.1);
+            transition: var(--transition);
+            cursor: pointer;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .workspace-tool:hover {
+            border-color: rgba(255, 215, 0, 0.3);
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+        }
+        
+        .workspace-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
+        
+        .workspace-analytics {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .analytics-chart {
+            background: linear-gradient(135deg, rgba(26, 26, 26, 0.8), rgba(10, 10, 10, 0.8));
+            border-radius: var(--border-radius);
+            padding: 20px;
+            border: 1px solid rgba(255, 215, 0, 0.1);
+        }
+        
+        .chart-container {
+            height: 200px;
+            position: relative;
+            margin-top: 20px;
+        }
+        
+        .chart-bar {
+            position: absolute;
+            bottom: 0;
+            width: 30px;
+            background: linear-gradient(to top, var(--primary-gold), #FFA500);
+            border-radius: 4px 4px 0 0;
+            transition: var(--transition);
+        }
+        
+        .chart-bar:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 15px rgba(255, 215, 0, 0.5);
+        }
+        
+        .chart-label {
+            position: absolute;
+            bottom: -25px;
+            text-align: center;
+            width: 100%;
+            font-size: 12px;
+            color: #aaa;
+        }
+        
+        .workspace-resources {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .resource-item {
+            background: rgba(255, 215, 0, 0.05);
+            border: 1px solid rgba(255, 215, 0, 0.1);
+            border-radius: 8px;
+            padding: 15px;
+            transition: var(--transition);
+            cursor: pointer;
+        }
+        
+        .resource-item:hover {
+            background: rgba(255, 215, 0, 0.1);
+            border-color: rgba(255, 215, 0, 0.3);
+            transform: translateY(-2px);
+        }
+        
+        .resource-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, var(--primary-gold), #FFA500);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 10px;
+            color: var(--primary-black);
+        }
+        
+        .training-video {
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: var(--border-radius);
+            padding: 20px;
+            margin-top: 20px;
+            border: 1px solid rgba(255, 215, 0, 0.1);
+        }
+        
+        .video-placeholder {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(135deg, #1a1a1a, #0a0a0a);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 48px;
+            color: var(--primary-gold);
+            margin-bottom: 20px;
+        }
+        
+        .performance-metric {
+            background: linear-gradient(135deg, rgba(26, 26, 26, 0.8), rgba(10, 10, 10, 0.8));
+            border-radius: var(--border-radius);
+            padding: 20px;
+            border: 1px solid rgba(255, 215, 0, 0.1);
+            margin-bottom: 20px;
+        }
+        
+        .metric-value {
+            font-size: 36px;
+            font-weight: 800;
+            color: var(--primary-gold);
+            margin-bottom: 10px;
+        }
+        
+        .metric-label {
+            font-size: 14px;
+            color: #aaa;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .metric-change {
+            display: inline-flex;
+            align-items: center;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 700;
+            margin-top: 10px;
+        }
+        
+        .metric-up {
+            background: rgba(0, 168, 107, 0.2);
+            color: #00CC88;
+            border: 1px solid rgba(0, 168, 107, 0.3);
+        }
+        
+        .metric-down {
+            background: rgba(211, 47, 47, 0.2);
+            color: #FF5252;
+            border: 1px solid rgba(211, 47, 47, 0.3);
+        }
+        
+        /* Workspace Tabs */
+        .workspace-tabs {
+            display: flex;
+            border-bottom: 1px solid rgba(255, 215, 0, 0.1);
+            margin-bottom: 30px;
+        }
+        
+        .workspace-tab {
+            padding: 15px 30px;
+            cursor: pointer;
+            font-weight: 600;
+            color: #888;
+            border-bottom: 3px solid transparent;
+            transition: var(--transition);
+        }
+        
+        .workspace-tab:hover {
+            color: var(--primary-gold);
+        }
+        
+        .workspace-tab.active {
+            color: var(--primary-gold);
+            border-bottom: 3px solid var(--primary-gold);
+        }
+        
+        .workspace-tab-content {
+            display: none;
+            animation: fadeIn 0.5s ease;
+        }
+        
+        .workspace-tab-content.active {
+            display: block;
+        }
+        
+        /* Switch Styles */
+        .switch {
+            position: relative;
+            display: inline-block;
+            width: 50px;
+            height: 24px;
+        }
+        
+        .switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+        
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            transition: .4s;
+            border-radius: 24px;
+        }
+        
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 16px;
+            width: 16px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            transition: .4s;
+            border-radius: 50%;
+        }
+        
+        input:checked + .slider {
+            background: linear-gradient(135deg, var(--primary-gold), #FFA500);
+        }
+        
+        input:checked + .slider:before {
+            transform: translateX(26px);
+        }
+        
+        .tag-diamond {
+            background: linear-gradient(135deg, var(--diamond), #87CEEB);
+            color: var(--primary-black);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="logo">
+                <i class="fas fa-crown fa-2x" style="color: var(--primary-gold);"></i>
+                <h2>Arex<span class="highlight">Gold</span></h2>
+            </div>
+            
+            <div class="user-profile">
+                <div class="tier-badge">DIAMOND</div>
+                <div class="avatar">JA</div>
+                <div class="user-info">
+                    <h3>John Agent</h3>
+                    <p>DIAMOND Tier • Elite Agent</p>
+                </div>
+            </div>
+            
+            <div class="menu">
+                <div class="menu-item active" data-section="dashboard">
+                    <i class="fas fa-tachometer-alt"></i>
+                    <span>Dashboard</span>
+                </div>
+                <div class="menu-item" data-section="promotion-hub">
+                    <i class="fas fa-bullhorn"></i>
+                    <span>Promotion Hub</span>
+                    <span class="tier-access tier-diamond">DIAMOND</span>
+                </div>
+                <div class="menu-item" data-section="bounty-missions">
+                    <i class="fas fa-tasks"></i>
+                    <span>Bounty Missions</span>
+                    <div class="badge">3</div>
+                    <span class="tier-access tier-gold">GOLD+</span>
+                </div>
+                <div class="menu-item" data-section="referrals">
+                    <i class="fas fa-user-friends"></i>
+                    <span>Referrals Tracking</span>
+                </div>
+                <div class="menu-item" data-section="payments">
+                    <i class="fas fa-wallet"></i>
+                    <span>Payments & Withdrawals</span>
+                </div>
+                <div class="menu-item" data-section="notifications">
+                    <i class="fas fa-bell"></i>
+                    <span>Notifications</span>
+                    <div class="badge">3</div>
+                </div>
+                <div class="menu-item" data-section="fraud">
+                    <i class="fas fa-shield-alt"></i>
+                    <span>Fraud Detection</span>
+                    <span class="tier-access tier-gold">GOLD+</span>
+                </div>
+                <div class="menu-item" data-section="workspace">
+                    <i class="fas fa-briefcase"></i>
+                    <span>AGENT WORKSPACE</span>
+                    <span class="tier-access tier-diamond">DIAMOND</span>
+                </div>
+            </div>
+            
+            <div class="balance-card">
+                <h3>Available Balance</h3>
+                <div class="amount">KES 45,750</div>
+                <button class="btn btn-mpesa" id="withdrawBtn">
+                    <i class="fas fa-mobile-alt"></i> Withdraw via M-Pesa
+                </button>
+                <button class="btn btn-logout" id="logoutBtn">
+                    <i class="fas fa-sign-out-alt"></i> Logout
+                </button>
+            </div>
+            
+            <div class="mt-20">
+                <div class="status-indicator" style="background: transparent; box-shadow: none; padding: 10px 0;">
+                    <div class="dot"></div>
+                    <span>Tier: DIAMOND • M-Pesa: Connected</span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- Dashboard Header -->
+            <div class="header">
+                <h1><i class="fas fa-crown"></i> <span id="pageTitle">Premium Agent Dashboard</span></h1>
+                <div class="status-indicator">
+                    <div class="dot"></div>
+                    <span>DIAMOND Tier • Full Access • Instant Payouts</span>
+                </div>
+            </div>
+            
+            <!-- Dashboard Section -->
+            <div class="dashboard-section active" id="dashboard-section">
+                <!-- Stats Cards -->
+                <div class="stats-cards">
+                    <div class="stat-card">
+                        <div class="label">Total Earnings</div>
+                        <div class="value">KES 287,500</div>
+                        <div class="subtext">Lifetime earnings with 98% fraud-free</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="label">Active Referrals</div>
+                        <div class="value">142</div>
+                        <div class="subtext">28 converted • 19.7% success rate</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="label">Tier Bonus</div>
+                        <div class="value">KES 5,000</div>
+                        <div class="subtext">Monthly DIAMOND tier bonus</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="label">M-Pesa Ready</div>
+                        <div class="value">KES 45,750</div>
+                        <div class="subtext">Available for instant withdrawal</div>
+                    </div>
+                </div>
+                
+                <!-- Quick Actions -->
+                <div class="dashboard-section mb-30">
+                    <div class="section-header">
+                        <h2>Quick Actions</h2>
+                    </div>
+                    
+                    <div class="grid-4">
+                        <div class="referral-card text-center cursor-pointer" data-section="referrals">
+                            <i class="fas fa-user-plus fa-2x mb-10" style="color: var(--mpesa-green);"></i>
+                            <h3 class="text-gold">Add Referral</h3>
+                            <p class="text-muted">Add new referral with fraud checks</p>
+                        </div>
+                        
+                        <div class="referral-card text-center cursor-pointer" data-section="promotion-hub">
+                            <i class="fas fa-link fa-2x mb-10" style="color: var(--primary-gold);"></i>
+                            <h3 class="text-gold">Generate Link</h3>
+                            <p class="text-muted">Create tracking links for promotions</p>
+                        </div>
+                        
+                        <div class="referral-card text-center cursor-pointer" data-section="payments">
+                            <i class="fas fa-money-bill-wave fa-2x mb-10" style="color: var(--mpesa-green);"></i>
+                            <h3 class="text-gold">Withdraw</h3>
+                            <p class="text-muted">Instant M-Pesa withdrawal</p>
+                        </div>
+                        
+                        <div class="referral-card text-center cursor-pointer" data-section="workspace">
+                            <i class="fas fa-briefcase fa-2x mb-10" style="color: #2196F3;"></i>
+                            <h3 class="text-gold">Workspace</h3>
+                            <p class="text-muted">Access premium tools & resources</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Promotion Hub Section -->
+            <div class="dashboard-section" id="promotion-hub-section">
+                <div class="section-header">
+                    <h2><i class="fas fa-bullhorn"></i> Promotion Hub <span class="tier-access tier-diamond">DIAMOND ACCESS</span></h2>
+                    <button class="btn-small" id="generateLinkBtn">Generate New Link</button>
+                </div>
+                
+                <div class="grid-2">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="card-title">Your Promotion Links</h3>
+                            <span class="tag tag-primary">5 Active</span>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="data-table">
+                                <thead>
+                                    <tr>
+                                        <th>Link Name</th>
+                                        <th>Product</th>
+                                        <th>Clicks</th>
+                                        <th>Conversions</th>
+                                        <th>Status</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Real Estate Premium</td>
+                                        <td>Luxury Properties</td>
+                                        <td>1,245</td>
+                                        <td>28</td>
+                                        <td><span class="tag tag-success">Active</span></td>
+                                        <td>
+                                            <button class="btn-small">Copy</button>
+                                            <button class="btn-small">Stats</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>E-commerce App</td>
+                                        <td>Premium Shopping</td>
+                                        <td>892</td>
+                                        <td>42</td>
+                                        <td><span class="tag tag-success">Active</span></td>
+                                        <td>
+                                            <button class="btn-small">Copy</button>
+                                            <button class="btn-small">Stats</button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="card-title">Create New Promotion</h3>
+                        </div>
+                        <div class="p-20">
+                            <div class="form-group">
+                                <label>Campaign Name</label>
+                                <input type="text" class="form-control" placeholder="Enter campaign name">
+                            </div>
+                            <div class="form-group">
+                                <label>Select Product</label>
+                                <select class="form-control">
+                                    <option>Luxury Real Estate</option>
+                                    <option>Premium E-commerce</option>
+                                    <option>Exclusive Banking</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>Commission Rate</label>
+                                <input type="text" class="form-control" value="15%" readonly>
+                            </div>
+                            <button class="btn btn-primary w-100">Generate Promotion Link</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Bounty Missions Section -->
+            <div class="dashboard-section" id="bounty-missions-section">
+                <div class="section-header">
+                    <h2><i class="fas fa-tasks"></i> Bounty Missions <span class="tier-access tier-gold">GOLD+ ACCESS</span></h2>
+                    <button class="btn-small" id="viewAllMissionsBtn">View All Missions</button>
+                </div>
+                
+                <div class="stats-cards">
+                    <div class="stat-card">
+                        <div class="label">Active Missions</div>
+                        <div class="value">3</div>
+                        <div class="subtext">Complete for bonus rewards</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="label">Mission Rewards</div>
+                        <div class="value">KES 25,000</div>
+                        <div class="subtext">Available to earn</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="label">Completed</div>
+                        <div class="value">7</div>
+                        <div class="subtext">Total missions completed</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="label">Success Rate</div>
+                        <div class="value">85%</div>
+                        <div class="subtext">Mission completion rate</div>
+                    </div>
+                </div>
+                
+                <div class="grid-3">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="card-title">Referral Mission</h3>
+                            <span class="tag tag-warning">3 days left</span>
+                        </div>
+                        <div class="p-20">
+                            <h4 class="text-gold mb-10">Get 10 New Referrals</h4>
+                            <p>Refer 10 new clients to luxury real estate</p>
+                            <div class="progress-bar mt-20">
+                                <div class="progress-fill" style="width: 60%;"></div>
+                            </div>
+                            <div class="d-flex justify-between mt-10">
+                                <span>6/10 Complete</span>
+                                <span class="text-gold">KES 5,000</span>
+                            </div>
+                            <button class="btn btn-primary w-100 mt-20">View Details</button>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="card-title">Conversion Mission</h3>
+                            <span class="tag tag-success">7 days left</span>
+                        </div>
+                        <div class="p-20">
+                            <h4 class="text-gold mb-10">Convert 5 Premium Clients</h4>
+                            <p>Convert 5 referrals to premium tier</p>
+                            <div class="progress-bar mt-20">
+                                <div class="progress-fill" style="width: 40%;"></div>
+                            </div>
+                            <div class="d-flex justify-between mt-10">
+                                <span>2/5 Complete</span>
+                                <span class="text-gold">KES 15,000</span>
+                            </div>
+                            <button class="btn btn-primary w-100 mt-20">View Details</button>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="card-title">Revenue Mission</h3>
+                            <span class="tag tag-info">14 days left</span>
+                        </div>
+                        <div class="p-20">
+                            <h4 class="text-gold mb-10">Generate KES 100K Revenue</h4>
+                            <p>Generate KES 100,000 in total revenue</p>
+                            <div class="progress-bar mt-20">
+                                <div class="progress-fill" style="width: 75%;"></div>
+                            </div>
+                            <div class="d-flex justify-between mt-10">
+                                <span>KES 75,000</span>
+                                <span class="text-gold">KES 10,000</span>
+                            </div>
+                            <button class="btn btn-primary w-100 mt-20">View Details</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Referrals Tracking Section -->
+            <div class="dashboard-section" id="referrals-section">
+                <div class="section-header">
+                    <h2><i class="fas fa-user-friends"></i> Referrals Tracking</h2>
+                    <div>
+                        <button class="btn-small mr-10" id="addReferralBtn">Add New Referral</button>
+                        <button class="btn-small" id="exportReferralsBtn">Export Data</button>
+                    </div>
+                </div>
+                
+                <div class="tabs">
+                    <div class="tab active" data-tab="active-referrals">Active Referrals</div>
+                    <div class="tab" data-tab="converted-referrals">Converted</div>
+                    <div class="tab" data-tab="pending-referrals">Pending</div>
+                    <div class="tab" data-tab="fraud-checked">Fraud Checked</div>
+                </div>
+                
+                <!-- Active Referrals Tab -->
+                <div class="tab-content active" id="active-referrals-tab">
+                    <div class="table-responsive">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Name</th>
+                                    <th>Product</th>
+                                    <th>Date Added</th>
+                                    <th>Status</th>
+                                    <th>Commission</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>REF-425</td>
+                                    <td>James Muriuki</td>
+                                    <td>Premium E-commerce App</td>
+                                    <td>Today, 15:30</td>
+                                    <td><span class="tag tag-success">Verified</span></td>
+                                    <td class="text-gold">KES 2,500</td>
+                                    <td>
+                                        <button class="btn-small" onclick="viewReferral('REF-425')">View</button>
+                                        <button class="btn-small" onclick="trackReferral('REF-425')">Track</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>REF-424</td>
+                                    <td>Sarah Wangari</td>
+                                    <td>Luxury Real Estate</td>
+                                    <td>Yesterday, 11:20</td>
+                                    <td><span class="tag tag-warning">Pending</span></td>
+                                    <td class="text-warning">KES 15,000</td>
+                                    <td>
+                                        <button class="btn-small" onclick="viewReferral('REF-424')">View</button>
+                                        <button class="btn-small" onclick="followUp('REF-424')">Follow Up</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>REF-423</td>
+                                    <td>David Ochieng</td>
+                                    <td>Exclusive Banking</td>
+                                    <td>2 days ago</td>
+                                    <td><span class="tag tag-info">In Progress</span></td>
+                                    <td class="text-gold">KES 45,000</td>
+                                    <td>
+                                        <button class="btn-small" onclick="viewReferral('REF-423')">View</button>
+                                        <button class="btn-small" onclick="contactReferral('REF-423')">Contact</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>REF-422</td>
+                                    <td>Michael Kamau</td>
+                                    <td>Premium E-commerce App</td>
+                                    <td>3 days ago</td>
+                                    <td><span class="tag tag-success">Converted</span></td>
+                                    <td class="text-success">KES 2,500</td>
+                                    <td>
+                                        <button class="btn-small" onclick="viewReferral('REF-422')">View</button>
+                                        <button class="btn-small" onclick="viewReceipt('REF-422')">Receipt</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                    <div class="mt-30">
+                        <h3 class="mb-20">Add New Referral</h3>
+                        <div class="grid-2">
+                            <div class="card">
+                                <h4 class="mb-15 text-gold">Quick Add</h4>
+                                <div class="form-group">
+                                    <label>Full Name</label>
+                                    <input type="text" class="form-control" id="quickName" placeholder="Enter full name">
+                                </div>
+                                <div class="form-group">
+                                    <label>Phone Number</label>
+                                    <input type="tel" class="form-control" id="quickPhone" placeholder="07XX XXX XXX">
+                                </div>
+                                <div class="form-group">
+                                    <label>Product Interest</label>
+                                    <select class="form-control" id="quickProduct">
+                                        <option value="real-estate">Luxury Real Estate</option>
+                                        <option value="ecommerce">Premium E-commerce</option>
+                                        <option value="finance">Exclusive Banking</option>
+                                    </select>
+                                </div>
+                                <button class="btn btn-primary" onclick="addQuickReferral()">Add Referral</button>
+                            </div>
+                            
+                            <div class="card">
+                                <h4 class="mb-15 text-gold">Referral Analytics</h4>
+                                <div class="grid-2">
+                                    <div class="text-center">
+                                        <div class="value">142</div>
+                                        <div class="label">Total Referrals</div>
+                                    </div>
+                                    <div class="text-center">
+                                        <div class="value">28</div>
+                                        <div class="label">Converted</div>
+                                    </div>
+                                    <div class="text-center">
+                                        <div class="value">19.7%</div>
+                                        <div class="label">Conversion Rate</div>
+                                    </div>
+                                    <div class="text-center">
+                                        <div class="value">KES 84,000</div>
+                                        <div class="label">Total Earnings</div>
+                                    </div>
+                                </div>
+                                
+                                <div class="progress-bar mt-20">
+                                    <div class="progress-fill" style="width: 67%;"></div>
+                                </div>
+                                <div class="text-center mt-10">Overall Progress: 67%</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Converted Referrals Tab -->
+                <div class="tab-content" id="converted-referrals-tab">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="card-title">Converted Referrals</h3>
+                            <span class="tag tag-success">28 Total Conversions</span>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="data-table">
+                                <thead>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>Name</th>
+                                        <th>Product</th>
+                                        <th>Conversion Date</th>
+                                        <th>Commission</th>
+                                        <th>Payout Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>REF-422</td>
+                                        <td>Michael Kamau</td>
+                                        <td>Premium App Purchase</td>
+                                        <td>Yesterday</td>
+                                        <td class="text-success">KES 2,500</td>
+                                        <td><span class="tag tag-success">Paid</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>REF-421</td>
+                                        <td>Linda Mwangi</td>
+                                        <td>Property Viewing</td>
+                                        <td>3 days ago</td>
+                                        <td class="text-success">KES 5,000</td>
+                                        <td><span class="tag tag-success">Paid</span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Payments & Withdrawals Section -->
+            <div class="dashboard-section" id="payments-section">
+                <div class="section-header">
+                    <h2><i class="fas fa-wallet"></i> Payments & Withdrawals</h2>
+                    <button class="btn-small" id="requestPayoutBtn">Request Payout</button>
+                </div>
+                
+                <div class="grid-2">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="card-title">Available Balance</h3>
+                            <span class="tag tag-success">Ready to Withdraw</span>
+                        </div>
+                        <div class="text-center p-30">
+                            <div class="value" style="font-size: 48px;">KES 45,750</div>
+                            <p class="text-muted mt-10">Available for instant M-Pesa withdrawal</p>
+                            <button class="btn btn-mpesa w-100 mt-20" onclick="openWithdrawalModal()">
+                                <i class="fas fa-mobile-alt"></i> Withdraw Now
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="card-title">Recent Transactions</h3>
+                            <button class="btn-small">View All</button>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="data-table">
+                                <thead>
+                                    <tr>
+                                        <th>Date</th>
+                                        <th>Type</th>
+                                        <th>Amount</th>
+                                        <th>Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Today</td>
+                                        <td>Commission</td>
+                                        <td class="text-success">KES 2,500</td>
+                                        <td><span class="tag tag-success">Paid</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Yesterday</td>
+                                        <td>Withdrawal</td>
+                                        <td class="text-danger">KES 10,000</td>
+                                        <td><span class="tag tag-success">Completed</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>3 days ago</td>
+                                        <td>Tier Bonus</td>
+                                        <td class="text-success">KES 5,000</td>
+                                        <td><span class="tag tag-success">Paid</span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card mt-30">
+                    <div class="card-header">
+                        <h3 class="card-title">Payment History</h3>
+                        <div class="d-flex">
+                            <button class="btn-small mr-10">Last 30 Days</button>
+                            <button class="btn-small">Export CSV</button>
+                        </div>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>Transaction ID</th>
+                                    <th>Date</th>
+                                    <th>Description</th>
+                                    <th>Amount</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>MP-TX-78945</td>
+                                    <td>Today, 10:30</td>
+                                    <td>Referral Commission - REF-422</td>
+                                    <td class="text-success">KES 2,500</td>
+                                    <td><span class="tag tag-success">Completed</span></td>
+                                </tr>
+                                <tr>
+                                    <td>MP-TX-78944</td>
+                                    <td>Yesterday, 14:20</td>
+                                    <td>M-Pesa Withdrawal</td>
+                                    <td class="text-danger">KES 10,000</td>
+                                    <td><span class="tag tag-success">Completed</span></td>
+                                </tr>
+                                <tr>
+                                    <td>MP-TX-78943</td>
+                                    <td>2 days ago</td>
+                                    <td>DIAMOND Tier Bonus</td>
+                                    <td class="text-success">KES 5,000</td>
+                                    <td><span class="tag tag-success">Completed</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Notifications Section -->
+            <div class="dashboard-section" id="notifications-section">
+                <div class="section-header">
+                    <h2><i class="fas fa-bell"></i> Notifications</h2>
+                    <button class="btn-small" id="markAllReadBtn">Mark All as Read</button>
+                </div>
+                
+                <div class="grid-2">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="card-title">Recent Notifications</h3>
+                            <span class="badge">3 New</span>
+                        </div>
+                        <div class="p-20">
+                            <div class="notification-item d-flex align-center mb-20 p-15" style="background: rgba(255, 215, 0, 0.05); border-radius: 8px;">
+                                <div class="notification-icon mr-15">
+                                    <i class="fas fa-money-bill-wave fa-lg text-success"></i>
+                                </div>
+                                <div class="flex-grow-1">
+                                    <h4 class="text-gold">Commission Earned</h4>
+                                    <p>You earned KES 2,500 from referral REF-422</p>
+                                    <small class="text-muted">10 minutes ago</small>
+                                </div>
+                            </div>
+                            
+                            <div class="notification-item d-flex align-center mb-20 p-15" style="background: rgba(255, 215, 0, 0.05); border-radius: 8px;">
+                                <div class="notification-icon mr-15">
+                                    <i class="fas fa-user-check fa-lg text-primary"></i>
+                                </div>
+                                <div class="flex-grow-1">
+                                    <h4 class="text-gold">Referral Converted</h4>
+                                    <p>Michael Kamau (REF-422) converted to premium</p>
+                                    <small class="text-muted">1 hour ago</small>
+                                </div>
+                            </div>
+                            
+                            <div class="notification-item d-flex align-center mb-20 p-15" style="background: rgba(255, 215, 0, 0.05); border-radius: 8px;">
+                                <div class="notification-icon mr-15">
+                                    <i class="fas fa-shield-alt fa-lg text-info"></i>
+                                </div>
+                                <div class="flex-grow-1">
+                                    <h4 class="text-gold">Fraud Check Complete</h4>
+                                    <p>All recent referrals passed fraud detection</p>
+                                    <small class="text-muted">2 hours ago</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="card-title">Notification Settings</h3>
+                        </div>
+                        <div class="p-20">
+                            <div class="form-group">
+                                <div class="d-flex justify-between align-center mb-15">
+                                    <span>Commission Alerts</span>
+                                    <label class="switch">
+                                        <input type="checkbox" checked>
+                                        <span class="slider"></span>
+                                    </label>
+                                </div>
+                                <div class="d-flex justify-between align-center mb-15">
+                                    <span>Referral Updates</span>
+                                    <label class="switch">
+                                        <input type="checkbox" checked>
+                                        <span class="slider"></span>
+                                    </label>
+                                </div>
+                                <div class="d-flex justify-between align-center mb-15">
+                                    <span>Withdrawal Notifications</span>
+                                    <label class="switch">
+                                        <input type="checkbox" checked>
+                                        <span class="slider"></span>
+                                    </label>
+                                </div>
+                                <div class="d-flex justify-between align-center">
+                                    <span>Fraud Alerts</span>
+                                    <label class="switch">
+                                        <input type="checkbox" checked>
+                                        <span class="slider"></span>
+                                    </label>
+                                </div>
+                            </div>
+                            <button class="btn btn-primary w-100">Save Settings</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Fraud Detection Section -->
+            <div class="dashboard-section" id="fraud-section">
+                <div class="section-header">
+                    <h2><i class="fas fa-shield-alt"></i> Fraud Detection Center <span class="tier-access tier-gold">GOLD+ ACCESS</span></h2>
+                    <button class="btn-small" id="runFraudCheckBtn">Run Fraud Check</button>
+                </div>
+                
+                <div class="fraud-dashboard">
+                    <div class="fraud-score">
+                        <div class="score-circle">
+                            <svg width="150" height="150" viewBox="0 0 36 36">
+                                <path d="M18 2.0845
+                                    a 15.9155 15.9155 0 0 1 0 31.831
+                                    a 15.9155 15.9155 0 0 1 0 -31.831"
+                                    fill="none"
+                                    stroke="rgba(255, 255, 255, 0.1)"
+                                    stroke-width="3"/>
+                                <path class="score-fill" 
+                                    d="M18 2.0845
+                                    a 15.9155 15.9155 0 0 1 0 31.831
+                                    a 15.9155 15.9155 0 0 1 0 -31.831"
+                                    fill="none"
+                                    stroke="url(#fraudGradient)"
+                                    stroke-width="3"
+                                    stroke-dasharray="98, 100"
+                                    stroke-linecap="round"/>
+                                <defs>
+                                    <linearGradient id="fraudGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                                        <stop offset="0%" style="stop-color:#00A86B;stop-opacity:1" />
+                                        <stop offset="100%" style="stop-color:#FFD700;stop-opacity:1" />
+                                    </linearGradient>
+                                </defs>
+                            </svg>
+                            <div class="score-text">98%</div>
+                        </div>
+                        <h3 class="text-gold">Excellent</h3>
+                        <p class="score-label">Fraud Prevention Score</p>
+                    </div>
+                    
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="card-title">Risk Analysis</h3>
+                        </div>
+                        <div class="p-20">
+                            <div class="mb-20">
+                                <div class="d-flex justify-between mb-10">
+                                    <span>Referral Quality</span>
+                                    <span class="text-success">Low Risk</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 15%;"></div>
+                                </div>
+                            </div>
+                            <div class="mb-20">
+                                <div class="d-flex justify-between mb-10">
+                                    <span>Pattern Consistency</span>
+                                    <span class="text-success">Low Risk</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 10%;"></div>
+                                </div>
+                            </div>
+                            <div class="mb-20">
+                                <div class="d-flex justify-between mb-10">
+                                    <span>Source Verification</span>
+                                    <span class="text-success">Verified</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 5%;"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="d-flex justify-between mb-10">
+                                    <span>Duplicate Detection</span>
+                                    <span class="text-success">Active</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 0%;"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="grid-2 mt-30">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="card-title">Recent Fraud Checks</h3>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="data-table">
+                                <thead>
+                                    <tr>
+                                        <th>Date</th>
+                                        <th>Check Type</th>
+                                        <th>Result</th>
+                                        <th>Details</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Today, 10:30</td>
+                                        <td>Referral Pattern Analysis</td>
+                                        <td><span class="tag tag-success">Passed</span></td>
+                                        <td>Normal referral patterns detected</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Yesterday, 18:45</td>
+                                        <td>IP Address Verification</td>
+                                        <td><span class="tag tag-success">Passed</span></td>
+                                        <td>Consistent IP address usage</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Yesterday, 14:20</td>
+                                        <td>Device Fingerprinting</td>
+                                        <td><span class="tag tag-success">Passed</span></td>
+                                        <td>Trusted device detected</td>
+                                    </tr>
+                                    <tr>
+                                        <td>2 days ago</td>
+                                        <td>Duplicate Referral Check</td>
+                                        <td><span class="tag tag-success">Passed</span></td>
+                                        <td>No duplicate referrals found</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="card-title">Fraud Prevention Tools</h3>
+                        </div>
+                        <div class="p-20">
+                            <div class="mb-20">
+                                <h4 class="text-gold mb-10">Active Protections</h4>
+                                <div class="d-flex align-center mb-10">
+                                    <i class="fas fa-check-circle text-success mr-10"></i>
+                                    <span>Real-time Pattern Detection</span>
+                                </div>
+                                <div class="d-flex align-center mb-10">
+                                    <i class="fas fa-check-circle text-success mr-10"></i>
+                                    <span>Duplicate Referral Blocking</span>
+                                </div>
+                                <div class="d-flex align-center mb-10">
+                                    <i class="fas fa-check-circle text-success mr-10"></i>
+                                    <span>IP & Device Verification</span>
+                                </div>
+                                <div class="d-flex align-center">
+                                    <i class="fas fa-check-circle text-success mr-10"></i>
+                                    <span>Source Tracking & Validation</span>
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <h4 class="text-gold mb-10">Run Manual Check</h4>
+                                <button class="btn btn-primary w-100" onclick="runManualFraudCheck()">
+                                    <i class="fas fa-search"></i> Scan All Referrals
+                                </button>
+                                <p class="text-center mt-10" style="font-size: 12px; color: #888;">
+                                    Last scan: Today, 10:30 AM
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card mt-30">
+                    <div class="card-header">
+                        <h3 class="card-title">Fraud Prevention Guidelines</h3>
+                    </div>
+                    <div class="p-20">
+                        <div class="grid-3">
+                            <div class="text-center">
+                                <div class="tool-icon" style="background: rgba(255, 215, 0, 0.1); margin: 0 auto 15px;">
+                                    <i class="fas fa-user-check" style="color: var(--primary-gold);"></i>
+                                </div>
+                                <h5 class="text-gold">Verify Sources</h5>
+                                <p class="text-muted">Always track where referrals come from</p>
+                            </div>
+                            <div class="text-center">
+                                <div class="tool-icon" style="background: rgba(0, 168, 107, 0.1); margin: 0 auto 15px;">
+                                    <i class="fas fa-shield-alt" style="color: var(--mpesa-green);"></i>
+                                </div>
+                                <h5 class="text-gold">Use Tracking Links</h5>
+                                <p class="text-muted">Generate unique links for each campaign</p>
+                            </div>
+                            <div class="text-center">
+                                <div class="tool-icon" style="background: rgba(0, 102, 204, 0.1); margin: 0 auto 15px;">
+                                    <i class="fas fa-chart-line" style="color: var(--accent-blue);"></i>
+                                </div>
+                                <h5 class="text-gold">Monitor Patterns</h5>
+                                <p class="text-muted">Watch for unusual referral patterns</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Agent Workspace Section -->
+            <div class="dashboard-section" id="workspace-section">
+                <div class="section-header">
+                    <h2><i class="fas fa-briefcase"></i> AGENT WORKSPACE <span class="tier-access tier-diamond">DIAMOND ACCESS</span></h2>
+                    <button class="btn-small" id="refreshWorkspaceBtn">Refresh Workspace</button>
+                </div>
+                
+                <!-- Workspace Tabs -->
+                <div class="workspace-tabs">
+                    <div class="workspace-tab active" data-workspace-tab="overview">Overview</div>
+                    <div class="workspace-tab" data-workspace-tab="analytics">Analytics</div>
+                    <div class="workspace-tab" data-workspace-tab="resources">Resources</div>
+                    <div class="workspace-tab" data-workspace-tab="training">Training</div>
+                    <div class="workspace-tab" data-workspace-tab="support">Support</div>
+                </div>
+                
+                <!-- Overview Tab -->
+                <div class="workspace-tab-content active" id="overview-tab">
+                    <div class="grid-3">
+                        <div class="workspace-tool" onclick="openWorkspaceTool('analytics')">
+                            <div class="workspace-icon" style="background: linear-gradient(135deg, #FFD700, #FFA500);">
+                                <i class="fas fa-chart-line" style="color: var(--primary-black);"></i>
+                            </div>
+                            <h3 class="text-gold mb-10">Advanced Analytics</h3>
+                            <p class="text-muted">Track performance metrics and optimize your strategy with real-time data.</p>
+                            <div class="mt-20">
+                                <span class="tag tag-primary">Real-time</span>
+                                <span class="tag tag-info">Interactive</span>
+                            </div>
+                        </div>
+                        
+                        <div class="workspace-tool" onclick="openWorkspaceTool('marketing')">
+                            <div class="workspace-icon" style="background: linear-gradient(135deg, var(--mpesa-green), #00CC88);">
+                                <i class="fas fa-bullhorn" style="color: white;"></i>
+                            </div>
+                            <h3 class="text-gold mb-10">Marketing Hub</h3>
+                            <p class="text-muted">Access exclusive marketing templates, banners, and promotional content.</p>
+                            <div class="mt-20">
+                                <span class="tag tag-success">50+ Templates</span>
+                                <span class="tag tag-info">Premium</span>
+                            </div>
+                        </div>
+                        
+                        <div class="workspace-tool" onclick="openWorkspaceTool('performance')">
+                            <div class="workspace-icon" style="background: linear-gradient(135deg, var(--accent-blue), #2196F3);">
+                                <i class="fas fa-trophy" style="color: white;"></i>
+                            </div>
+                            <h3 class="text-gold mb-10">Performance Tracker</h3>
+                            <p class="text-muted">Monitor your ranking, achievements, and progress towards goals.</p>
+                            <div class="mt-20">
+                                <span class="tag tag-warning">Rank: Top 5%</span>
+                                <span class="tag tag-success">Trending ↑</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="grid-3 mt-30">
+                        <div class="workspace-tool" onclick="openWorkspaceTool('automation')">
+                            <div class="workspace-icon" style="background: linear-gradient(135deg, #9B59B6, #8E44AD);">
+                                <i class="fas fa-robot" style="color: white;"></i>
+                            </div>
+                            <h3 class="text-gold mb-10">Automation Tools</h3>
+                            <p class="text-muted">Automate referral tracking, follow-ups, and reporting tasks.</p>
+                            <div class="mt-20">
+                                <span class="tag tag-info">Auto-schedule</span>
+                                <span class="tag tag-success">Time-saving</span>
+                            </div>
+                        </div>
+                        
+                        <div class="workspace-tool" onclick="openWorkspaceTool('commissions')">
+                            <div class="workspace-icon" style="background: linear-gradient(135deg, #FF9800, #F57C00);">
+                                <i class="fas fa-coins" style="color: white;"></i>
+                            </div>
+                            <h3 class="text-gold mb-10">Commission Calculator</h3>
+                            <p class="text-muted">Calculate potential earnings and optimize your referral strategy.</p>
+                            <div class="mt-20">
+                                <span class="tag tag-primary">KES 500K+</span>
+                                <span class="tag tag-success">Projection</span>
+                            </div>
+                        </div>
+                        
+                        <div class="workspace-tool" onclick="openWorkspaceTool('networking')">
+                            <div class="workspace-icon" style="background: linear-gradient(135deg, #00A86B, #00CC88);">
+                                <i class="fas fa-users" style="color: white;"></i>
+                            </div>
+                            <h3 class="text-gold mb-10">Agent Network</h3>
+                            <p class="text-muted">Connect with top agents, share strategies, and collaborate.</p>
+                            <div class="mt-20">
+                                <span class="tag tag-info">245 Agents</span>
+                                <span class="tag tag-success">Active</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Quick Stats -->
+                    <div class="grid-4 mt-30">
+                        <div class="performance-metric text-center">
+                            <div class="metric-value">98%</div>
+                            <div class="metric-label">Success Rate</div>
+                            <div class="metric-change metric-up">
+                                <i class="fas fa-arrow-up mr-5"></i> 2.5%
+                            </div>
+                        </div>
+                        <div class="performance-metric text-center">
+                            <div class="metric-value">142</div>
+                            <div class="metric-label">Active Referrals</div>
+                            <div class="metric-change metric-up">
+                                <i class="fas fa-arrow-up mr-5"></i> 12
+                            </div>
+                        </div>
+                        <div class="performance-metric text-center">
+                            <div class="metric-value">KES 287K</div>
+                            <div class="metric-label">Total Earnings</div>
+                            <div class="metric-change metric-up">
+                                <i class="fas fa-arrow-up mr-5"></i> 15%
+                            </div>
+                        </div>
+                        <div class="performance-metric text-center">
+                            <div class="metric-value">#8</div>
+                            <div class="metric-label">Network Rank</div>
+                            <div class="metric-change metric-up">
+                                <i class="fas fa-arrow-up mr-5"></i> 3 spots
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Analytics Tab -->
+                <div class="workspace-tab-content" id="analytics-tab">
+                    <div class="grid-2">
+                        <div class="analytics-chart">
+                            <h3 class="text-gold mb-20">Referral Performance</h3>
+                            <div class="chart-container" id="referralChart">
+                                <!-- Chart bars will be generated by JavaScript -->
+                            </div>
+                        </div>
+                        
+                        <div class="analytics-chart">
+                            <h3 class="text-gold mb-20">Earnings Trend</h3>
+                            <div class="chart-container" id="earningsChart">
+                                <!-- Chart bars will be generated by JavaScript -->
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="card mt-30">
+                        <div class="card-header">
+                            <h3 class="card-title">Performance Insights</h3>
+                            <button class="btn-small" onclick="generatePerformanceReport()">Generate Report</button>
+                        </div>
+                        <div class="p-20">
+                            <div class="grid-2">
+                                <div>
+                                    <h4 class="text-gold mb-10">📈 Top Performing Channels</h4>
+                                    <ul style="list-style: none; padding: 0;">
+                                        <li class="mb-10 d-flex align-center">
+                                            <i class="fas fa-whatsapp text-success mr-10"></i>
+                                            <span>WhatsApp: 45% conversions</span>
+                                        </li>
+                                        <li class="mb-10 d-flex align-center">
+                                            <i class="fas fa-facebook text-primary mr-10"></i>
+                                            <span>Facebook: 28% conversions</span>
+                                        </li>
+                                        <li class="mb-10 d-flex align-center">
+                                            <i class="fas fa-instagram text-danger mr-10"></i>
+                                            <span>Instagram: 18% conversions</span>
+                                        </li>
+                                        <li class="d-flex align-center">
+                                            <i class="fas fa-envelope text-warning mr-10"></i>
+                                            <span>Email: 9% conversions</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                                
+                                <div>
+                                    <h4 class="text-gold mb-10">🎯 Recommendations</h4>
+                                    <div class="p-15" style="background: rgba(255, 215, 0, 0.05); border-radius: 8px;">
+                                        <p class="mb-10">1. <strong>Focus on WhatsApp:</strong> Your highest converting channel</p>
+                                        <p class="mb-10">2. <strong>Increase Facebook ads:</strong> Good ROI potential</p>
+                                        <p class="mb-10">3. <strong>Optimize referral timing:</strong> Best results 6-9 PM</p>
+                                        <p>4. <strong>Target real estate:</strong> Highest commission rates</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Resources Tab -->
+                <div class="workspace-tab-content" id="resources-tab">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="card-title">Premium Marketing Resources</h3>
+                            <button class="btn-small" onclick="downloadResourcePack()">Download All</button>
+                        </div>
+                        <div class="p-20">
+                            <div class="workspace-resources">
+                                <div class="resource-item" onclick="downloadResource('banners')">
+                                    <div class="resource-icon">
+                                        <i class="fas fa-image"></i>
+                                    </div>
+                                    <h4 class="text-gold">Social Media Banners</h4>
+                                    <p class="text-muted">15 premium banners for all platforms</p>
+                                </div>
+                                
+                                <div class="resource-item" onclick="downloadResource('scripts')">
+                                    <div class="resource-icon">
+                                        <i class="fas fa-file-alt"></i>
+                                    </div>
+                                    <h4 class="text-gold">Sales Scripts</h4>
+                                    <p class="text-muted">Proven scripts for calls & messages</p>
+                                </div>
+                                
+                                <div class="resource-item" onclick="downloadResource('presentations')">
+                                    <div class="resource-icon">
+                                        <i class="fas fa-presentation"></i>
+                                    </div>
+                                    <h4 class="text-gold">Product Presentations</h4>
+                                    <p class="text-muted">Interactive presentations for clients</p>
+                                </div>
+                                
+                                <div class="resource-item" onclick="downloadResource('templates')">
+                                    <div class="resource-icon">
+                                        <i class="fas fa-envelope"></i>
+                                    </div>
+                                    <h4 class="text-gold">Email Templates</h4>
+                                    <p class="text-muted">High-converting email sequences</p>
+                                </div>
+                                
+                                <div class="resource-item" onclick="downloadResource('guides')">
+                                    <div class="resource-icon">
+                                        <i class="fas fa-book"></i>
+                                    </div>
+                                    <h4 class="text-gold">Success Guides</h4>
+                                    <p class="text-muted">Step-by-step success playbooks</p>
+                                </div>
+                                
+                                <div class="resource-item" onclick="downloadResource('calculator')">
+                                    <div class="resource-icon">
+                                        <i class="fas fa-calculator"></i>
+                                    </div>
+                                    <h4 class="text-gold">ROI Calculator</h4>
+                                    <p class="text-muted">Interactive earnings calculator</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="card mt-30">
+                        <div class="card-header">
+                            <h3 class="card-title">Latest Updates</h3>
+                            <span class="tag tag-primary">New</span>
+                        </div>
+                        <div class="p-20">
+                            <div class="mb-20 p-15" style="background: rgba(255, 215, 0, 0.05); border-radius: 8px;">
+                                <h4 class="text-gold mb-10">🎉 New Real Estate Campaign</h4>
+                                <p>Access the new luxury real estate campaign materials with 20% higher commissions.</p>
+                                <button class="btn-small mt-10">Access Campaign</button>
+                            </div>
+                            
+                            <div class="p-15" style="background: rgba(0, 168, 107, 0.05); border-radius: 8px;">
+                                <h4 class="text-gold mb-10">📊 Enhanced Analytics</h4>
+                                <p>New analytics dashboard with predictive insights and AI recommendations.</p>
+                                <button class="btn-small mt-10">Try Now</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Training Tab -->
+                <div class="workspace-tab-content" id="training-tab">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="card-title">Premium Training Materials</h3>
+                            <button class="btn-small" onclick="startTrainingProgram()">Start Program</button>
+                        </div>
+                        <div class="p-20">
+                            <div class="training-video">
+                                <div class="video-placeholder">
+                                    <i class="fas fa-play-circle"></i>
+                                </div>
+                                <h4 class="text-gold mb-10">Advanced Referral Strategies</h4>
+                                <p class="mb-20">Learn how top agents generate 50+ referrals per month with proven techniques.</p>
+                                <button class="btn btn-primary" onclick="playTrainingVideo()">
+                                    <i class="fas fa-play mr-10"></i> Watch Training
+                                </button>
+                            </div>
+                            
+                            <div class="grid-3 mt-30">
+                                <div class="card">
+                                    <h4 class="text-gold mb-10">Sales Mastery</h4>
+                                    <p class="text-muted mb-15">Advanced sales techniques for high-ticket items</p>
+                                    <span class="tag tag-primary">8 Modules</span>
+                                    <button class="btn-small w-100 mt-15">Enroll Now</button>
+                                </div>
+                                
+                                <div class="card">
+                                    <h4 class="text-gold mb-10">Digital Marketing</h4>
+                                    <p class="text-muted mb-15">Social media & online promotion strategies</p>
+                                    <span class="tag tag-success">6 Modules</span>
+                                    <button class="btn-small w-100 mt-15">Enroll Now</button>
+                                </div>
+                                
+                                <div class="card">
+                                    <h4 class="text-gold mb-10">Fraud Prevention</h4>
+                                    <p class="text-muted mb-15">Advanced techniques to detect and prevent fraud</p>
+                                    <span class="tag tag-info">4 Modules</span>
+                                    <button class="btn-small w-100 mt-15">Enroll Now</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="card mt-30">
+                        <div class="card-header">
+                            <h3 class="card-title">Live Training Sessions</h3>
+                            <span class="tag tag-warning">Upcoming</span>
+                        </div>
+                        <div class="p-20">
+                            <div class="d-flex justify-between align-center mb-20 p-15" style="background: rgba(255, 215, 0, 0.05); border-radius: 8px;">
+                                <div>
+                                    <h4 class="text-gold">Real Estate Masterclass</h4>
+                                    <p class="text-muted">Tomorrow, 2:00 PM • Live on Zoom</p>
+                                </div>
+                                <button class="btn-small">Register</button>
+                            </div>
+                            
+                            <div class="d-flex justify-between align-center p-15" style="background: rgba(0, 168, 107, 0.05); border-radius: 8px;">
+                                <div>
+                                    <h4 class="text-gold">Advanced Analytics Workshop</h4>
+                                    <p class="text-muted">Friday, 10:00 AM • Live on Zoom</p>
+                                </div>
+                                <button class="btn-small">Register</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Support Tab -->
+                <div class="workspace-tab-content" id="support-tab">
+                    <div class="grid-2">
+                        <div class="card">
+                            <div class="card-header">
+                                <h3 class="card-title">Priority Support</h3>
+                                <span class="tag tag-diamond">DIAMOND TIER</span>
+                            </div>
+                            <div class="p-20">
+                                <div class="mb-20">
+                                    <h4 class="text-gold mb-10">Direct Support Channels</h4>
+                                    <div class="mb-15 d-flex align-center">
+                                        <i class="fas fa-phone text-success mr-10"></i>
+                                        <div>
+                                            <strong>Phone Support</strong>
+                                            <p class="text-muted">0700 123 456 • 24/7 Priority Line</p>
+                                        </div>
+                                    </div>
+                                    <div class="mb-15 d-flex align-center">
+                                        <i class="fas fa-whatsapp text-success mr-10"></i>
+                                        <div>
+                                            <strong>WhatsApp Business</strong>
+                                            <p class="text-muted">+254 700 123 456 • Instant Response</p>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex align-center">
+                                        <i class="fas fa-envelope text-primary mr-10"></i>
+                                        <div>
+                                            <strong>Email Support</strong>
+                                            <p class="text-muted">support@arexgold.com • 1-hour response</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <button class="btn btn-primary w-100" onclick="contactSupport()">
+                                    <i class="fas fa-headset mr-10"></i> Contact Support Now
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="card">
+                            <div class="card-header">
+                                <h3 class="card-title">Account Manager</h3>
+                                <span class="tag tag-success">Assigned</span>
+                            </div>
+                            <div class="p-20">
+                                <div class="d-flex align-center mb-20">
+                                    <div class="avatar mr-20" style="width: 70px; height: 70px;">
+                                        SM
+                                    </div>
+                                    <div>
+                                        <h4 class="text-gold">Sarah Manager</h4>
+                                        <p class="text-muted">Your Dedicated Account Manager</p>
+                                        <p class="text-success">Online • Available Now</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="mb-20">
+                                    <h5 class="text-gold mb-10">Specialized Support:</h5>
+                                    <ul style="list-style: none; padding: 0;">
+                                        <li class="mb-5 d-flex align-center">
+                                            <i class="fas fa-check-circle text-success mr-10"></i>
+                                            <span>Strategy Consultation</span>
+                                        </li>
+                                        <li class="mb-5 d-flex align-center">
+                                            <i class="fas fa-check-circle text-success mr-10"></i>
+                                            <span>Performance Review</span>
+                                        </li>
+                                        <li class="mb-5 d-flex align-center">
+                                            <i class="fas fa-check-circle text-success mr-10"></i>
+                                            <span>Commission Optimization</span>
+                                        </li>
+                                        <li class="d-flex align-center">
+                                            <i class="fas fa-check-circle text-success mr-10"></i>
+                                            <span>Account Growth Planning</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                                
+                                <button class="btn btn-mpesa w-100" onclick="scheduleMeeting()">
+                                    <i class="fas fa-calendar mr-10"></i> Schedule 1-on-1 Meeting
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="card mt-30">
+                        <div class="card-header">
+                            <h3 class="card-title">Knowledge Base</h3>
+                            <button class="btn-small" onclick="openKnowledgeBase()">Browse Articles</button>
+                        </div>
+                        <div class="p-20">
+                            <div class="grid-3">
+                                <div>
+                                    <h5 class="text-gold mb-10">Getting Started</h5>
+                                    <ul style="list-style: none; padding: 0;">
+                                        <li class="mb-5"><a href="#" class="text-muted cursor-pointer" onclick="openArticle('setup')">Account Setup Guide</a></li>
+                                        <li class="mb-5"><a href="#" class="text-muted cursor-pointer" onclick="openArticle('first-referral')">Your First Referral</a></li>
+                                        <li><a href="#" class="text-muted cursor-pointer" onclick="openArticle('withdrawal')">First Withdrawal</a></li>
+                                    </ul>
+                                </div>
+                                
+                                <div>
+                                    <h5 class="text-gold mb-10">Advanced Topics</h5>
+                                    <ul style="list-style: none; padding: 0;">
+                                        <li class="mb-5"><a href="#" class="text-muted cursor-pointer" onclick="openArticle('analytics')">Analytics Deep Dive</a></li>
+                                        <li class="mb-5"><a href="#" class="text-muted cursor-pointer" onclick="openArticle('automation')">Automation Strategies</a></li>
+                                        <li><a href="#" class="text-muted cursor-pointer" onclick="openArticle('scaling')">Scaling Your Business</a></li>
+                                    </ul>
+                                </div>
+                                
+                                <div>
+                                    <h5 class="text-gold mb-10">Troubleshooting</h5>
+                                    <ul style="list-style: none; padding: 0;">
+                                        <li class="mb-5"><a href="#" class="text-muted cursor-pointer" onclick="openArticle('fraud-issues')">Fraud Detection Issues</a></li>
+                                        <li class="mb-5"><a href="#" class="text-muted cursor-pointer" onclick="openArticle('payment-issues')">Payment Issues</a></li>
+                                        <li><a href="#" class="text-muted cursor-pointer" onclick="openArticle('technical')">Technical Support</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Footer -->
+            <div class="footer">
+                <p>
+                    <i class="fas fa-shield-alt text-gold"></i> 
+                    <strong>Arex Gold Network</strong> | 
+                    <span class="mpesa-tag">
+                        <i class="fas fa-mobile-alt"></i> Powered by M-Pesa
+                    </span>
+                </p>
+                <p>© 2025 Arex Ltd | Premium Agent Network | Terms | Privacy | Support</p>
+                <p class="mt-20">
+                    <small>Your security is our priority. All transactions are protected by advanced fraud detection.</small>
+                </p>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Withdrawal Modal -->
+    <div class="modal" id="withdrawalModal">
+        <div class="modal-content">
+            <div class="modal-close" data-modal="withdrawalModal">&times;</div>
+            <div class="modal-header">
+                <h3><i class="fas fa-money-bill-wave"></i> M-Pesa Withdrawal</h3>
+            </div>
+            <form id="withdrawalForm">
+                <div class="form-group">
+                    <label>Available Balance</label>
+                    <input type="text" class="form-control" value="KES 45,750" readonly style="background: rgba(255, 215, 0, 0.1);">
+                </div>
+                <div class="form-group">
+                    <label>Amount to Withdraw</label>
+                    <input type="number" class="form-control" id="withdrawAmount" placeholder="Enter amount" min="100" max="45750" value="45750">
+                    <small class="text-muted">Minimum: KES 100 | Maximum: KES 45,750</small>
+                </div>
+                <div class="form-group">
+                    <label>M-Pesa Number</label>
+                    <div class="d-flex align-center">
+                        <input type="text" class="form-control" value="0712 XXX XXX" readonly style="background: rgba(0, 168, 107, 0.1);">
+                        <button type="button" class="btn-small ml-10" onclick="updateMpesaNumber()">Update</button>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>DIAMOND Tier Benefits</label>
+                    <div class="p-15" style="background: rgba(255, 215, 0, 0.1); border-radius: 8px;">
+                        <div class="d-flex align-center mb-5">
+                            <i class="fas fa-bolt text-gold mr-10"></i>
+                            <span>Instant Processing (0-5 minutes)</span>
+                        </div>
+                        <div class="d-flex align-center mb-5">
+                            <i class="fas fa-coins text-gold mr-10"></i>
+                            <span>Zero Transaction Fees</span>
+                        </div>
+                        <div class="d-flex align-center">
+                            <i class="fas fa-shield-check text-gold mr-10"></i>
+                            <span>Priority Fraud Check</span>
+                        </div>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-mpesa w-100">
+                    <i class="fas fa-paper-plane"></i> Confirm Withdrawal
+                </button>
+            </form>
+        </div>
+    </div>
+    
+    <!-- Add Referral Modal -->
+    <div class="modal" id="addReferralModal">
+        <div class="modal-content">
+            <div class="modal-close" data-modal="addReferralModal">&times;</div>
+            <div class="modal-header">
+                <h3><i class="fas fa-user-plus"></i> Add New Referral</h3>
+            </div>
+            <form id="referralForm">
+                <div class="form-group">
+                    <label>Full Name *</label>
+                    <input type="text" class="form-control" id="referralName" placeholder="Enter full name" required>
+                </div>
+                <div class="form-group">
+                    <label>Phone Number *</label>
+                    <input type="tel" class="form-control" id="referralPhone" placeholder="07XX XXX XXX" required>
+                </div>
+                <div class="form-group">
+                    <label>Email Address</label>
+                    <input type="email" class="form-control" id="referralEmail" placeholder="email@example.com">
+                </div>
+                <div class="form-group">
+                    <label>Product Interest *</label>
+                    <select class="form-control" id="referralProduct" required>
+                        <option value="">Select product...</option>
+                        <option value="real-estate">Luxury Real Estate</option>
+                        <option value="ecommerce">Premium E-commerce App</option>
+                        <option value="finance">Exclusive Banking Services</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Referral Source</label>
+                    <select class="form-control" id="referralSource">
+                        <option value="">Select source...</option>
+                        <option value="facebook">Facebook</option>
+                        <option value="instagram">Instagram</option>
+                        <option value="whatsapp">WhatsApp</option>
+                        <option value="tiktok">TikTok</option>
+                        <option value="direct">Direct Referral</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Notes (Optional)</label>
+                    <textarea class="form-control" id="referralNotes" rows="3" placeholder="Any additional information..."></textarea>
+                </div>
+                <div class="form-group">
+                    <div class="d-flex align-center">
+                        <input type="checkbox" id="fraudCheck" checked>
+                        <label for="fraudCheck" class="ml-10">Run fraud detection check</label>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary w-100">
+                    <i class="fas fa-shield-check"></i> Add Referral with Fraud Check
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Initialize UI when DOM is loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('Arex Gold Portal loaded - All sections accessible');
+            setupNavigation();
+            setupTabs();
+            setupModals();
+            setupForms();
+            setupButtons();
+            initializeWorkspaceCharts();
+            activateFirstTabs();
+        });
+        
+        // Setup main navigation between sections
+        function setupNavigation() {
+            // Sidebar menu items
+            document.querySelectorAll('.menu-item').forEach(item => {
+                item.addEventListener('click', function() {
+                    const sectionId = this.getAttribute('data-section');
+                    switchSection(sectionId, this);
+                });
+            });
+            
+            // Quick action cards
+            document.querySelectorAll('.referral-card[data-section]').forEach(card => {
+                card.addEventListener('click', function() {
+                    const sectionId = this.getAttribute('data-section');
+                    switchSection(sectionId);
+                });
+            });
+        }
+        
+        // Switch between dashboard sections
+        function switchSection(sectionId, menuItem = null) {
+            // Update menu active state
+            document.querySelectorAll('.menu-item').forEach(i => i.classList.remove('active'));
+            if (menuItem) {
+                menuItem.classList.add('active');
+            } else {
+                document.querySelector(`.menu-item[data-section="${sectionId}"]`)?.classList.add('active');
+            }
+            
+            // Hide all sections
+            document.querySelectorAll('.dashboard-section').forEach(section => {
+                section.classList.remove('active');
+            });
+            
+            // Show selected section
+            const targetSection = document.getElementById(`${sectionId}-section`);
+            if (targetSection) {
+                targetSection.classList.add('active');
+                
+                // Update page title
+                const sectionTitle = targetSection.querySelector('.section-header h2');
+                if (sectionTitle) {
+                    // Remove tier badge text from title
+                    const titleText = sectionTitle.textContent.replace(/DIAMOND ACCESS|GOLD\+ ACCESS/g, '').trim();
+                    document.getElementById('pageTitle').textContent = titleText;
+                } else {
+                    document.getElementById('pageTitle').textContent = 'Premium Agent Dashboard';
+                }
+                
+                // Initialize charts if it's the workspace section
+                if (sectionId === 'workspace') {
+                    initializeWorkspaceCharts();
+                }
+            }
+        }
+        
+        // Setup tab functionality
+        function setupTabs() {
+            // Main tabs in referrals section
+            document.querySelectorAll('.tabs .tab').forEach(tab => {
+                tab.addEventListener('click', function() {
+                    const tabId = this.getAttribute('data-tab');
+                    const tabsContainer = this.closest('.tabs');
+                    
+                    // Update tab active state
+                    tabsContainer.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    // Show corresponding tab content
+                    const section = this.closest('.dashboard-section');
+                    section.querySelectorAll('.tab-content').forEach(content => {
+                        content.classList.remove('active');
+                    });
+                    
+                    const tabContent = section.querySelector(`#${tabId}-tab`);
+                    if (tabContent) {
+                        tabContent.classList.add('active');
+                    }
+                });
+            });
+            
+            // Workspace tabs
+            document.querySelectorAll('.workspace-tab').forEach(tab => {
+                tab.addEventListener('click', function() {
+                    const tabId = this.getAttribute('data-workspace-tab');
+                    const tabsContainer = this.closest('.workspace-tabs');
+                    
+                    // Update tab active state
+                    tabsContainer.querySelectorAll('.workspace-tab').forEach(t => t.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    // Show corresponding tab content
+                    const section = document.getElementById('workspace-section');
+                    section.querySelectorAll('.workspace-tab-content').forEach(content => {
+                        content.classList.remove('active');
+                    });
+                    
+                    const tabContent = section.querySelector(`#${tabId}-tab`);
+                    if (tabContent) {
+                        tabContent.classList.add('active');
+                        
+                        // Initialize charts if it's the analytics tab
+                        if (tabId === 'analytics') {
+                            setTimeout(initializeWorkspaceCharts, 100);
+                        }
+                    }
+                });
+            });
+        }
+        
+        // Setup modal functionality
+        function setupModals() {
+            const modals = {
+                withdrawalModal: document.getElementById('withdrawalModal'),
+                addReferralModal: document.getElementById('addReferralModal')
+            };
+            
+            // Open withdrawal modal
+            document.getElementById('withdrawBtn')?.addEventListener('click', () => {
+                modals.withdrawalModal.style.display = 'flex';
+            });
+            
+            // Open add referral modal
+            document.getElementById('addReferralBtn')?.addEventListener('click', () => {
+                modals.addReferralModal.style.display = 'flex';
+            });
+            
+            // Request payout button
+            document.getElementById('requestPayoutBtn')?.addEventListener('click', () => {
+                openWithdrawalModal();
+            });
+            
+            // Generate link button
+            document.getElementById('generateLinkBtn')?.addEventListener('click', () => {
+                showAlert('🔗 Link Generated', 'New promotion link created successfully!\n\nLink: https://arex.gold/promo/abc123\n\nCopy and share with your network.', 'success');
+            });
+            
+            // Export referrals button
+            document.getElementById('exportReferralsBtn')?.addEventListener('click', () => {
+                showAlert('✅ Data Exported', 'Your referrals data has been exported to CSV file.', 'success');
+            });
+            
+            // Run fraud check button
+            document.getElementById('runFraudCheckBtn')?.addEventListener('click', () => {
+                runManualFraudCheck();
+            });
+            
+            // Mark all notifications as read
+            document.getElementById('markAllReadBtn')?.addEventListener('click', () => {
+                showAlert('✅ Notifications Cleared', 'All notifications have been marked as read.', 'success');
+                // Clear badge
+                const badge = document.querySelector('.menu-item[data-section="notifications"] .badge');
+                if (badge) badge.textContent = '0';
+            });
+            
+            // Refresh workspace button
+            document.getElementById('refreshWorkspaceBtn')?.addEventListener('click', () => {
+                refreshWorkspace();
+            });
+            
+            // View all missions button
+            document.getElementById('viewAllMissionsBtn')?.addEventListener('click', () => {
+                showAlert('🎯 All Missions', 'Showing all available bounty missions.\n\n1. Referral Mission - KES 5,000\n2. Conversion Mission - KES 15,000\n3. Revenue Mission - KES 10,000\n\nTotal Available: KES 30,000', 'info');
+            });
+            
+            // Close modal buttons
+            document.querySelectorAll('.modal-close').forEach(button => {
+                button.addEventListener('click', function() {
+                    const modalId = this.getAttribute('data-modal');
+                    modals[modalId].style.display = 'none';
+                });
+            });
+            
+            // Close modal when clicking outside
+            window.addEventListener('click', (e) => {
+                Object.values(modals).forEach(modal => {
+                    if (e.target === modal) {
+                        modal.style.display = 'none';
+                    }
+                });
+            });
+        }
+        
+        // Setup form submissions
+        function setupForms() {
+            // Withdrawal form
+            document.getElementById('withdrawalForm')?.addEventListener('submit', function(e) {
+                e.preventDefault();
+                const amount = document.getElementById('withdrawAmount').value;
+                showAlert('✅ Withdrawal Successful', 
+                    `KES ${amount} is being transferred to your M-Pesa.\n\nDIAMOND Tier Benefits:\n• Instant processing (0-5 minutes)\n• Zero transaction fees\n• Priority queue\n\nYou will receive an SMS confirmation shortly.`, 
+                    'success');
+                document.getElementById('withdrawalModal').style.display = 'none';
+            });
+            
+            // Referral form
+            document.getElementById('referralForm')?.addEventListener('submit', function(e) {
+                e.preventDefault();
+                const name = document.getElementById('referralName').value;
+                const phone = document.getElementById('referralPhone').value;
+                const product = document.getElementById('referralProduct').value;
+                
+                if (!name || !phone || !product) {
+                    showAlert('⚠️ Missing Information', 'Please fill in all required fields.', 'warning');
+                    return;
+                }
+                
+                // Simulate fraud check
+                const fraudCheck = document.getElementById('fraudCheck').checked;
+                if (fraudCheck) {
+                    showAlert('🔍 Fraud Check Running', 'Checking referral for fraudulent patterns...', 'info');
+                    
+                    setTimeout(() => {
+                        showAlert('✅ Referral Added Successfully', 
+                            `Referral for ${name} has been added with fraud check passed.\n\nDetails:\n• Phone: ${phone}\n• Product: ${product}\n• Fraud Score: 95/100\n\nReferral is now active and being tracked.`, 
+                            'success');
+                        document.getElementById('addReferralModal').style.display = 'none';
+                        this.reset();
+                        
+                        // Update UI
+                        updateReferralCount();
+                    }, 1500);
+                }
+            });
+            
+            // Notification settings form
+            document.querySelector('.card .btn-primary')?.addEventListener('click', function(e) {
+                if (e.target.closest('.card')) {
+                    e.preventDefault();
+                    showAlert('✅ Settings Saved', 'Your notification preferences have been updated.', 'success');
+                }
+            });
+        }
+        
+        // Setup button actions
+        function setupButtons() {
+            // Logout button
+            document.getElementById('logoutBtn').addEventListener('click', function() {
+                if (confirm('Are you sure you want to logout?')) {
+                    showAlert('👋 Logging Out', 'Your session has been secured. Redirecting to login...', 'info');
+                }
+            });
+        }
+        
+        // Activate first tabs in each section
+        function activateFirstTabs() {
+            // Activate first main tab
+            document.querySelectorAll('.tabs').forEach(tabs => {
+                const firstTab = tabs.querySelector('.tab');
+                if (firstTab && !firstTab.classList.contains('active')) {
+                    firstTab.click();
+                }
+            });
+            
+            // Activate first workspace tab if needed
+            const workspaceTabs = document.querySelector('.workspace-tabs');
+            if (workspaceTabs) {
+                const firstWorkspaceTab = workspaceTabs.querySelector('.workspace-tab');
+                if (firstWorkspaceTab && !firstWorkspaceTab.classList.contains('active')) {
+                    firstWorkspaceTab.click();
+                }
+            }
+        }
+        
+        // Initialize workspace charts
+        function initializeWorkspaceCharts() {
+            // Referral chart data
+            const referralData = [
+                { label: 'Mon', value: 12 },
+                { label: 'Tue', value: 18 },
+                { label: 'Wed', value: 15 },
+                { label: 'Thu', value: 22 },
+                { label: 'Fri', value: 25 },
+                { label: 'Sat', value: 20 },
+                { label: 'Sun', value: 16 }
+            ];
+            
+            // Earnings chart data
+            const earningsData = [
+                { label: 'Week 1', value: 45000 },
+                { label: 'Week 2', value: 52000 },
+                { label: 'Week 3', value: 61000 },
+                { label: 'Week 4', value: 75000 }
+            ];
+            
+            // Create referral chart
+            const referralChart = document.getElementById('referralChart');
+            if (referralChart) {
+                referralChart.innerHTML = '';
+                const maxReferral = Math.max(...referralData.map(d => d.value));
+                
+                referralData.forEach((item, index) => {
+                    const bar = document.createElement('div');
+                    bar.className = 'chart-bar';
+                    bar.style.height = `${(item.value / maxReferral) * 100}%`;
+                    bar.style.left = `${(index / referralData.length) * 100}%`;
+                    bar.style.width = `${80 / referralData.length}%`;
+                    bar.style.marginLeft = `${(20 / referralData.length) / 2}%`;
+                    bar.title = `${item.label}: ${item.value} referrals`;
+                    
+                    const label = document.createElement('div');
+                    label.className = 'chart-label';
+                    label.textContent = item.label;
+                    label.style.left = `${(index / referralData.length) * 100}%`;
+                    label.style.width = `${80 / referralData.length}%`;
+                    label.style.marginLeft = `${(20 / referralData.length) / 2}%`;
+                    
+                    referralChart.appendChild(bar);
+                    referralChart.appendChild(label);
+                });
+            }
+            
+            // Create earnings chart
+            const earningsChart = document.getElementById('earningsChart');
+            if (earningsChart) {
+                earningsChart.innerHTML = '';
+                const maxEarning = Math.max(...earningsData.map(d => d.value));
+                
+                earningsData.forEach((item, index) => {
+                    const bar = document.createElement('div');
+                    bar.className = 'chart-bar';
+                    bar.style.height = `${(item.value / maxEarning) * 100}%`;
+                    bar.style.left = `${(index / earningsData.length) * 100}%`;
+                    bar.style.width = `${80 / earningsData.length}%`;
+                    bar.style.marginLeft = `${(20 / earningsData.length) / 2}%`;
+                    bar.style.background = 'linear-gradient(to top, var(--mpesa-green), #00CC88)';
+                    bar.title = `${item.label}: KES ${item.value.toLocaleString()}`;
+                    
+                    const label = document.createElement('div');
+                    label.className = 'chart-label';
+                    label.textContent = item.label;
+                    label.style.left = `${(index / earningsData.length) * 100}%`;
+                    label.style.width = `${80 / earningsData.length}%`;
+                    label.style.marginLeft = `${(20 / earningsData.length) / 2}%`;
+                    
+                    earningsChart.appendChild(bar);
+                    earningsChart.appendChild(label);
+                });
+            }
+        }
+        
+        // Refresh workspace
+        function refreshWorkspace() {
+            showAlert('🔄 Workspace Refreshed', 'Your workspace has been refreshed with the latest data and analytics.', 'info');
+            initializeWorkspaceCharts();
+        }
+        
+        // Workspace tool functions
+        function openWorkspaceTool(tool) {
+            const tools = {
+                'analytics': '📊 Advanced Analytics Tool',
+                'marketing': '📱 Marketing Hub',
+                'performance': '🏆 Performance Tracker',
+                'automation': '🤖 Automation Tools',
+                'commissions': '💰 Commission Calculator',
+                'networking': '👥 Agent Network'
+            };
+            
+            if (tools[tool]) {
+                showAlert(tools[tool], `Opening ${tools[tool]}...\n\nDIAMOND Tier Feature Activated\nLoading premium interface...`, 'info');
+            }
+        }
+        
+        function downloadResource(resource) {
+            const resources = {
+                'banners': 'Social Media Banners Pack',
+                'scripts': 'Sales Scripts Collection',
+                'presentations': 'Product Presentations',
+                'templates': 'Email Templates Pack',
+                'guides': 'Success Guides',
+                'calculator': 'ROI Calculator'
+            };
+            
+            if (resources[resource]) {
+                showAlert('📥 Download Started', `${resources[resource]} download has started.\n\nFile: ${resource}.zip (15 MB)\nEstimated time: 10 seconds`, 'success');
+            }
+        }
+        
+        function downloadResourcePack() {
+            showAlert('📦 Download All Resources', 'Downloading complete resource pack...\n\nTotal size: 85 MB\nContains: 6 premium resource packs\nEstimated time: 45 seconds', 'info');
+        }
+        
+        function generatePerformanceReport() {
+            showAlert('📈 Performance Report Generated', 'Your performance report has been generated and is ready for download.\n\nReport includes:\n• Weekly performance analysis\n• Channel effectiveness\n• Revenue projections\n• Improvement recommendations\n\nClick OK to download the PDF report.', 'success');
+        }
+        
+        function playTrainingVideo() {
+            showAlert('🎬 Training Video', 'Playing "Advanced Referral Strategies"\n\nDuration: 25 minutes\nInstructor: Sarah Manager (Top 1% Agent)\nTopics Covered:\n• Prospecting techniques\n• Conversion optimization\n• Follow-up strategies\n• Scaling your network', 'info');
+        }
+        
+        function startTrainingProgram() {
+            showAlert('🎓 Training Program Started', 'You have been enrolled in the Premium Agent Training Program.\n\nProgram includes:\n• 8 comprehensive modules\n• Weekly assignments\n• Personal coaching sessions\n• Certificate of completion\n\nCheck your email for program details.', 'success');
+        }
+        
+        function contactSupport() {
+            showAlert('📞 Contacting Support', 'Connecting you with priority DIAMOND tier support...\n\nSupport Options:\n1. Call: 0700 123 456 (24/7)\n2. WhatsApp: +254 700 123 456\n3. Email: support@arexgold.com\n\nAverage wait time: < 1 minute', 'info');
+        }
+        
+        function scheduleMeeting() {
+            const date = prompt('Enter preferred date for meeting (YYYY-MM-DD):');
+            const time = prompt('Enter preferred time (HH:MM):');
+            
+            if (date && time) {
+                showAlert('📅 Meeting Scheduled', `Your 1-on-1 meeting with Sarah Manager has been scheduled.\n\nDate: ${date}\nTime: ${time}\nDuration: 30 minutes\nPlatform: Zoom\n\nA calendar invitation has been sent to your email.`, 'success');
+            }
+        }
+        
+        function openKnowledgeBase() {
+            showAlert('📚 Knowledge Base', 'Opening comprehensive knowledge base...\n\nCategories:\n• Getting Started\n• Advanced Strategies\n• Troubleshooting\n• Best Practices\n• Video Tutorials\n• FAQ', 'info');
+        }
+        
+        function openArticle(article) {
+            const articles = {
+                'setup': 'Account Setup Guide',
+                'first-referral': 'Your First Referral Guide',
+                'withdrawal': 'First Withdrawal Process',
+                'analytics': 'Analytics Deep Dive',
+                'automation': 'Automation Strategies',
+                'scaling': 'Scaling Your Business',
+                'fraud-issues': 'Fraud Detection Troubleshooting',
+                'payment-issues': 'Payment Issues Resolution',
+                'technical': 'Technical Support Guide'
+            };
+            
+            if (articles[article]) {
+                showAlert(`📖 ${articles[article]}`, `Opening article: ${articles[article]}\n\nThis comprehensive guide will help you master this topic.\nEstimated read time: 5-10 minutes`, 'info');
+            }
+        }
+        
+        // Referral actions
+        window.viewReferral = function(id) {
+            showAlert('📋 Referral Details', 
+                `Viewing details for ${id}\n\nName: ${getRandomName()}\nStatus: Active\nCommission: KES 2,500\nAdded: Today\n\nFraud Check: Passed ✓`, 
+                'info');
+        };
+        
+        window.trackReferral = function(id) {
+            showAlert('📍 Tracking Referral', 
+                `Tracking activity for ${id}\n\nLast Activity: Today, 15:30\nStatus: Viewed product page\nNext Follow-up: Tomorrow\n\nConversion Probability: 65%`, 
+                'info');
+        };
+        
+        window.followUp = function(id) {
+            showAlert('📞 Follow Up Required', 
+                `Follow up with referral ${id}\n\nSuggested Actions:\n1. Send WhatsApp reminder\n2. Share product link\n3. Schedule call for tomorrow\n\nCommission at stake: KES 15,000`, 
+                'warning');
+        };
+        
+        window.contactReferral = function(id) {
+            showAlert('📱 Contact Referral', 
+                `Contact options for ${id}\n\nPhone: 07XX XXX XXX\nEmail: email@example.com\n\nPreferred Contact: WhatsApp\nBest Time: 2-4 PM`, 
+                'info');
+        };
+        
+        window.viewReceipt = function(id) {
+            showAlert('🧾 Payment Receipt', 
+                `Receipt for ${id}\n\nAmount: KES 2,500\nDate: Yesterday\nStatus: Paid\nTransaction ID: MP-TX-${Math.floor(Math.random() * 100000)}\n\nM-Pesa Confirmation: Sent`, 
+                'success');
+        };
+        
+        // Fraud detection
+        window.runManualFraudCheck = function() {
+            showAlert('🔍 Running Fraud Check', 'Scanning all referrals for fraudulent patterns...', 'info');
+            
+            setTimeout(() => {
+                showAlert('✅ Fraud Check Complete', 
+                    `All referrals scanned successfully.\n\nResults:\n• Total Referrals: 142\n• Clean: 140 (98.6%)\n• Flagged: 0\n• Suspicious: 2 (1.4%)\n\nYour fraud score: 98% ✓`, 
+                    'success');
+            }, 2000);
+        };
+        
+        window.updateMpesaNumber = function() {
+            const newNumber = prompt('Enter new M-Pesa number:');
+            if (newNumber && newNumber.match(/^07[0-9]{8}$/)) {
+                showAlert('✅ M-Pesa Updated', 
+                    `Your M-Pesa number has been updated to: ${newNumber}\n\nA verification SMS has been sent.`, 
+                    'success');
+            } else if (newNumber) {
+                showAlert('⚠️ Invalid Number', 'Please enter a valid Kenyan phone number (07XXXXXXXX).', 'warning');
+            }
+        };
+        
+        window.openWithdrawalModal = function() {
+            document.getElementById('withdrawalModal').style.display = 'flex';
+        };
+        
+        // Quick add referral
+        window.addQuickReferral = function() {
+            const name = document.getElementById('quickName').value;
+            const phone = document.getElementById('quickPhone').value;
+            const product = document.getElementById('quickProduct').value;
+            
+            if (!name || !phone) {
+                showAlert('⚠️ Missing Information', 'Please enter name and phone number.', 'warning');
+                return;
+            }
+            
+            showAlert('✅ Quick Referral Added', 
+                `Referral for ${name} added successfully.\n\nA full fraud check will run in the background.`, 
+                'success');
+            
+            // Clear form
+            document.getElementById('quickName').value = '';
+            document.getElementById('quickPhone').value = '';
+            updateReferralCount();
+        };
+        
+        // Helper functions
+        function showAlert(title, message, type = 'info') {
+            const icon = type === 'success' ? '✅' : type === 'warning' ? '⚠️' : type === 'error' ? '❌' : 'ℹ️';
+            alert(`${icon} ${title}\n\n${message}`);
+        }
+        
+        function getRandomName() {
+            const names = ['James Muriuki', 'Sarah Wangari', 'David Ochieng', 'Linda Mwangi', 'Michael Kamau'];
+            return names[Math.floor(Math.random() * names.length)];
+        }
+        
+        function updateReferralCount() {
+            // In a real app, this would update from backend
+            const badge = document.querySelector('.menu-item[data-section="referrals"] .badge');
+            if (badge) {
+                const current = parseInt(badge.textContent) || 0;
+                badge.textContent = current + 1;
+            }
+        }
+    </script>
+</body>
+</html>

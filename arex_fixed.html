@@ -1,0 +1,1236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arex Ltd - Premium Referral Marketing Platform</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* ... (your existing CSS remains exactly the same) ... */
+        /* No changes needed in CSS as we're only changing IDs */
+    </style>
+</head>
+<body>
+    <!-- Main Landing Page -->
+    <div id="landingPage">
+        <!-- ... (landing page content remains exactly the same) ... -->
+    </div>
+
+    <!-- Business Dashboard -->
+    <div id="businessDashboard" class="dashboard">
+        <!-- ... (business dashboard content remains exactly the same) ... -->
+        <!-- Note: Business Dashboard IDs remain unchanged -->
+    </div>
+
+    <!-- UPDATED AGENT DASHBOARD -->
+    <div id="agentDashboard" class="agent-dashboard">
+        <div class="container-flex">
+            <!-- Sidebar -->
+            <div class="sidebar">
+                <!-- ... (sidebar content remains the same) ... -->
+            </div>
+            
+            <!-- Main Content -->
+            <div class="main-content">
+                <!-- Dashboard Header -->
+                <div class="header" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 40px; padding-bottom: 20px; border-bottom: 1px solid rgba(255, 215, 0, 0.1);">
+                    <h1 style="background: linear-gradient(45deg, #FFD700, #FFA500); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-size: 32px; font-weight: 800;">
+                        <i class="fas fa-crown"></i> <span id="agentPageTitle">Premium Agent Dashboard</span>
+                    </h1>
+                    <div class="status-indicator">
+                        <div class="dot"></div>
+                        <span>DIAMOND Tier • Full Access • Instant Payouts</span>
+                    </div>
+                </div>
+                
+                <!-- Dashboard Section -->
+                <div class="dashboard-section active" id="agent-dashboard-section">
+                    <!-- Stats Cards -->
+                    <div class="stats-cards">
+                        <div class="stat-card">
+                            <div class="label">Total Earnings</div>
+                            <div class="value">KES 287,500</div>
+                            <div class="subtext">Lifetime earnings with 98% fraud-free</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="label">Active Referrals</div>
+                            <div class="value">142</div>
+                            <div class="subtext">28 converted • 19.7% success rate</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="label">Tier Bonus</div>
+                            <div class="value">KES 5,000</div>
+                            <div class="subtext">Monthly DIAMOND tier bonus</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="label">M-Pesa Ready</div>
+                            <div class="value">KES 45,750</div>
+                            <div class="subtext">Available for instant withdrawal</div>
+                        </div>
+                    </div>
+                    
+                    <!-- Quick Actions -->
+                    <div class="dashboard-section mb-30">
+                        <div class="section-header">
+                            <h2>Quick Actions</h2>
+                        </div>
+                        
+                        <div class="grid-4">
+                            <div class="referral-card text-center cursor-pointer" data-section="agent-referrals">
+                                <i class="fas fa-user-plus fa-2x mb-10" style="color: var(--mpesa-green);"></i>
+                                <h3 class="text-gold">Add Referral</h3>
+                                <p class="text-muted">Add new referral with fraud checks</p>
+                            </div>
+                            
+                            <div class="referral-card text-center cursor-pointer" data-section="agent-promotion-hub">
+                                <i class="fas fa-link fa-2x mb-10" style="color: var(--primary-gold);"></i>
+                                <h3 class="text-gold">Generate Link</h3>
+                                <p class="text-muted">Create tracking links for promotions</p>
+                            </div>
+                            
+                            <div class="referral-card text-center cursor-pointer" data-section="agent-payments">
+                                <i class="fas fa-money-bill-wave fa-2x mb-10" style="color: var(--mpesa-green);"></i>
+                                <h3 class="text-gold">Withdraw</h3>
+                                <p class="text-muted">Instant M-Pesa withdrawal</p>
+                            </div>
+                            
+                            <div class="referral-card text-center cursor-pointer" data-section="agent-workspace">
+                                <i class="fas fa-briefcase fa-2x mb-10" style="color: #2196F3;"></i>
+                                <h3 class="text-gold">Workspace</h3>
+                                <p class="text-muted">Access premium tools & resources</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Promotion Hub Section -->
+                <div class="dashboard-section" id="agent-promotion-hub-section">
+                    <div class="section-header">
+                        <h2><i class="fas fa-bullhorn"></i> Promotion Hub <span class="tier-access tier-diamond">DIAMOND ACCESS</span></h2>
+                        <button class="btn-small" id="agentGenerateLinkBtn">Generate New Link</button>
+                    </div>
+                    
+                    <div class="grid-2">
+                        <div class="card">
+                            <div class="card-header">
+                                <h3 class="card-title">Your Promotion Links</h3>
+                                <span class="tag tag-primary">5 Active</span>
+                            </div>
+                            <div class="table-responsive">
+                                <table class="data-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Link Name</th>
+                                            <th>Product</th>
+                                            <th>Clicks</th>
+                                            <th>Conversions</th>
+                                            <th>Status</th>
+                                            <th>Actions</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Real Estate Premium</td>
+                                            <td>Luxury Properties</td>
+                                            <td>1,245</td>
+                                            <td>28</td>
+                                            <td><span class="tag tag-success">Active</span></td>
+                                            <td>
+                                                <button class="btn-small">Copy</button>
+                                                <button class="btn-small">Stats</button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>E-commerce App</td>
+                                            <td>Premium Shopping</td>
+                                            <td>892</td>
+                                            <td>42</td>
+                                            <td><span class="tag tag-success">Active</span></td>
+                                            <td>
+                                                <button class="btn-small">Copy</button>
+                                                <button class="btn-small">Stats</button>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        
+                        <div class="card">
+                            <div class="card-header">
+                                <h3 class="card-title">Create New Promotion</h3>
+                            </div>
+                            <div class="p-20">
+                                <div class="form-group">
+                                    <label>Campaign Name</label>
+                                    <input type="text" class="form-control" placeholder="Enter campaign name">
+                                </div>
+                                <div class="form-group">
+                                    <label>Select Product</label>
+                                    <select class="form-control">
+                                        <option>Luxury Real Estate</option>
+                                        <option>Premium E-commerce</option>
+                                        <option>Exclusive Banking</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label>Commission Rate</label>
+                                    <input type="text" class="form-control" value="15%" readonly>
+                                </div>
+                                <button class="btn btn-gold w-100">Generate Promotion Link</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Bounty Missions Section -->
+                <div class="dashboard-section" id="agent-bounty-missions-section">
+                    <div class="section-header">
+                        <h2><i class="fas fa-tasks"></i> Bounty Missions <span class="tier-access tier-gold">GOLD+ ACCESS</span></h2>
+                        <button class="btn-small" id="agentViewAllMissionsBtn">View All Missions</button>
+                    </div>
+                    
+                    <!-- ... (bounty missions content remains the same) ... -->
+                </div>
+                
+                <!-- Referrals Tracking Section -->
+                <div class="dashboard-section" id="agent-referrals-section">
+                    <div class="section-header">
+                        <h2><i class="fas fa-user-friends"></i> Referrals Tracking</h2>
+                        <div>
+                            <button class="btn-small mr-10" id="agentAddReferralBtn">Add New Referral</button>
+                            <button class="btn-small" id="agentExportReferralsBtn">Export Data</button>
+                        </div>
+                    </div>
+                    
+                    <div class="tabs">
+                        <div class="tab active" data-tab="agent-active-referrals">Active Referrals</div>
+                        <div class="tab" data-tab="agent-converted-referrals">Converted</div>
+                        <div class="tab" data-tab="agent-pending-referrals">Pending</div>
+                        <div class="tab" data-tab="agent-fraud-checked">Fraud Checked</div>
+                    </div>
+                    
+                    <!-- Active Referrals Tab -->
+                    <div class="tab-content active" id="agent-active-referrals-tab">
+                        <!-- ... (referrals content remains the same) ... -->
+                    </div>
+                    
+                    <!-- Converted Referrals Tab -->
+                    <div class="tab-content" id="agent-converted-referrals-tab">
+                        <!-- ... (converted referrals content remains the same) ... -->
+                    </div>
+                </div>
+                
+                <!-- Payments & Withdrawals Section -->
+                <div class="dashboard-section" id="agent-payments-section">
+                    <!-- ... (payments content remains the same) ... -->
+                </div>
+                
+                <!-- Notifications Section -->
+                <div class="dashboard-section" id="agent-notifications-section">
+                    <!-- ... (notifications content remains the same) ... -->
+                </div>
+                
+                <!-- Fraud Detection Section -->
+                <div class="dashboard-section" id="agent-fraud-section">
+                    <!-- ... (fraud detection content remains the same) ... -->
+                </div>
+                
+                <!-- Agent Workspace Section -->
+                <div class="dashboard-section" id="agent-workspace-section">
+                    <!-- ... (workspace content remains the same) ... -->
+                </div>
+                
+                <!-- Footer -->
+                <div class="footer">
+                    <p>
+                        <i class="fas fa-shield-alt text-gold"></i> 
+                        <strong>Arex Gold Network</strong> | 
+                        <span class="mpesa-tag">
+                            <i class="fas fa-mobile-alt"></i> Powered by M-Pesa
+                        </span>
+                    </p>
+                    <p>© 2026 Arex Ltd | Premium Agent Network | Terms | Privacy | Support</p>
+                    <p class="mt-20">
+                        <small>Your security is our priority. All transactions are protected by advanced fraud detection.</small>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Payment Modal -->
+    <div id="paymentModal" class="modal">
+        <!-- ... (payment modal remains the same) ... -->
+    </div>
+
+    <!-- Business Login Modal -->
+    <div id="businessLoginModal" class="modal">
+        <!-- ... (business login modal remains the same) ... -->
+    </div>
+
+    <!-- Agent Login Modal -->
+    <div id="agentLoginModal" class="modal">
+        <!-- ... (agent login modal remains the same) ... -->
+    </div>
+    
+    <!-- Withdrawal Modal -->
+    <div class="modal" id="agentWithdrawalModal">
+        <div class="modal-content">
+            <div class="modal-close" data-modal="agentWithdrawalModal">&times;</div>
+            <div class="modal-header">
+                <h3><i class="fas fa-money-bill-wave"></i> M-Pesa Withdrawal</h3>
+            </div>
+            <form id="agentWithdrawalForm">
+                <!-- ... (withdrawal form content remains the same) ... -->
+            </form>
+        </div>
+    </div>
+    
+    <!-- Add Referral Modal -->
+    <div class="modal" id="agentAddReferralModal">
+        <div class="modal-content">
+            <div class="modal-close" data-modal="agentAddReferralModal">&times;</div>
+            <div class="modal-header">
+                <h3><i class="fas fa-user-plus"></i> Add New Referral</h3>
+            </div>
+            <form id="agentReferralForm">
+                <!-- ... (referral form content remains the same) ... -->
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Global variables
+        let currentPlan = '';
+        let currentAmount = 0;
+
+        // Mobile Menu Toggle
+        function toggleMenu() {
+            document.querySelector('.nav-links').classList.toggle('active');
+        }
+
+        // Lead Form Submission
+        document.getElementById('leadForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const name = this.querySelector('input[type="text"]').value;
+            const email = this.querySelector('input[type="email"]').value;
+            
+            alert(`Thank you ${name}! Your 100 free leads have been claimed. We'll contact you at ${email} within 24 hours.`);
+            this.reset();
+        });
+
+        // Plan Selection
+        function selectPlan(plan, amount) {
+            currentPlan = plan;
+            currentAmount = amount;
+            
+            document.getElementById('selectedPlanText').textContent = `${plan} - KES ${amount.toLocaleString()}/month`;
+            document.getElementById('paymentModal').style.display = 'flex';
+        }
+
+        function closePayment() {
+            document.getElementById('paymentModal').style.display = 'none';
+        }
+
+        // Payment Verification
+        function verifyPayment() {
+            const mpesaCode = document.getElementById('mpesaCode').value;
+            const phoneNumber = document.getElementById('phoneNumber').value;
+
+            if (!mpesaCode || !phoneNumber) {
+                alert('Please enter both M-Pesa code and phone number');
+                return;
+            }
+
+            // Show loading state
+            const btn = document.querySelector('#paymentModal .btn');
+            const originalText = btn.innerHTML;
+            btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Verifying Payment...';
+            btn.disabled = true;
+
+            // Simulate payment verification
+            setTimeout(() => {
+                // Clear modal
+                closePayment();
+                document.getElementById('mpesaCode').value = '';
+                document.getElementById('phoneNumber').value = '';
+                
+                // Hide landing page, show dashboard
+                document.getElementById('landingPage').style.display = 'none';
+                document.getElementById('businessDashboard').style.display = 'block';
+                
+                // Reset button
+                btn.innerHTML = originalText;
+                btn.disabled = false;
+                
+                // Show success message
+                showSuccessMessage();
+                
+                // Update dashboard based on plan
+                updateDashboardForPlan(currentPlan);
+            }, 2000);
+        }
+
+        // Show success message
+        function showSuccessMessage() {
+            const successMsg = `
+                <div style="position: fixed; top: 20px; right: 20px; background: linear-gradient(135deg, var(--mpesa-green), #008000); 
+                     color: white; padding: 20px; border-radius: 10px; z-index: 3000; box-shadow: 0 10px 30px rgba(0,179,0,0.3);">
+                    <div style="display: flex; align-items: center; gap: 10px;">
+                        <i class="fas fa-check-circle" style="font-size: 24px;"></i>
+                        <div>
+                            <div style="font-weight: 600;">Payment Successful!</div>
+                            <div style="font-size: 14px;">Welcome to ${currentPlan}</div>
+                        </div>
+                    </div>
+                </div>
+            `;
+            
+            const tempDiv = document.createElement('div');
+            tempDiv.innerHTML = successMsg;
+            document.body.appendChild(tempDiv);
+            
+            // Remove after 5 seconds
+            setTimeout(() => {
+                tempDiv.remove();
+            }, 5000);
+        }
+
+        // Update dashboard based on selected plan
+        function updateDashboardForPlan(plan) {
+            const planDetails = {
+                'Diamond Tier': {
+                    leads: 5000,
+                    color: 'var(--primary-gold)',
+                    features: ['Up to 5,000 leads/month', 'Email Priority Support']
+                },
+                'Platinum Tier': {
+                    leads: 50000,
+                    color: 'var(--accent-blue)',
+                    features: ['Up to 50,000 leads', '24/7 Priority Support']
+                },
+                'Gold Tier': {
+                    leads: 'Unlimited',
+                    color: 'var(--elite)',
+                    features: ['Unlimited Leads', '24/7 Dedicated Manager']
+                }
+            };
+            
+            const details = planDetails[plan];
+            if (details) {
+                // Update trial banner based on plan
+                const banner = document.querySelector('.trial-banner');
+                if (plan === 'Gold Tier') {
+                    banner.innerHTML = `
+                        <i class="fas fa-crown"></i> You're on Gold Tier! 
+                        Enjoy unlimited leads and premium features. 
+                        Your agents are currently earning 3x multipliers.
+                    `;
+                    banner.style.background = 'linear-gradient(135deg, var(--elite), #6A0DAD)';
+                }
+                
+                // Update plan indicator
+                const planIndicator = document.querySelector('.user-info p:last-child');
+                if (planIndicator) {
+                    planIndicator.innerHTML = `
+                        <span style="color: ${details.color}; font-weight: 600;">${plan}</span> • 
+                        <span style="color: var(--mpesa-green);">KES ${currentAmount.toLocaleString()}/month</span>
+                    `;
+                }
+            }
+        }
+
+        // Business Login
+        function openBusinessLogin() {
+            document.getElementById('businessLoginModal').style.display = 'flex';
+        }
+
+        // Agent Login
+        function openAgentLogin() {
+            document.getElementById('agentLoginModal').style.display = 'flex';
+        }
+
+        function closeModal(modalId) {
+            document.getElementById(modalId).style.display = 'none';
+        }
+
+        // Business Login Form
+        document.getElementById('businessLoginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const email = document.getElementById('businessEmail').value;
+            
+            // For demo, simulate login
+            alert(`Welcome back business user! Logging you in...`);
+            closeModal('businessLoginModal');
+            
+            // Show dashboard
+            document.getElementById('landingPage').style.display = 'none';
+            document.getElementById('businessDashboard').style.display = 'block';
+            
+            // Set demo plan for existing customer
+            currentPlan = 'Platinum Tier';
+            currentAmount = 50000;
+            updateDashboardForPlan(currentPlan);
+        });
+
+        // Agent Login Form
+        document.getElementById('agentLoginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const phone = document.getElementById('agentPhone').value;
+            
+            // For demo, simulate login
+            alert(`Welcome back agent! Logging you in...`);
+            closeModal('agentLoginModal');
+            
+            // Show agent dashboard
+            document.getElementById('landingPage').style.display = 'none';
+            document.getElementById('agentDashboard').style.display = 'block';
+            
+            // Initialize agent dashboard
+            initializeAgentDashboard();
+        });
+
+        // Agent Registration Form
+        document.getElementById('agentRegistrationForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form values
+            const name = document.getElementById('agentRegName').value;
+            const phone = document.getElementById('agentRegPhone').value;
+            const email = document.getElementById('agentRegEmail').value;
+            const mpesa = document.getElementById('agentRegMpesa').value;
+            
+            // Validate phone numbers
+            if (!phone.match(/^\+254[0-9]{9}$/) && !phone.match(/^07[0-9]{8}$/)) {
+                alert('Please enter a valid Kenyan phone number (format: +254700000000 or 0700000000)');
+                return;
+            }
+            
+            if (!mpesa.match(/^\+254[0-9]{9}$/) && !mpesa.match(/^07[0-9]{8}$/)) {
+                alert('Please enter a valid M-Pesa number (format: +254700000000 or 0700000000)');
+                return;
+            }
+            
+            // Show loading state
+            const btn = this.querySelector('button[type="submit"]');
+            const originalText = btn.innerHTML;
+            btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Registering...';
+            btn.disabled = true;
+            
+            // Simulate registration process
+            setTimeout(() => {
+                // Show success message
+                alert(`🎉 Welcome ${name}!\n\nYour agent account has been created successfully!\n\nAccount Details:\n• Phone: ${phone}\n• Email: ${email}\n• M-Pesa: ${mpesa}\n\nYou'll be redirected to your agent dashboard.`);
+                
+                // Clear form
+                this.reset();
+                
+                // Reset button
+                btn.innerHTML = originalText;
+                btn.disabled = false;
+                
+                // Show agent dashboard
+                document.getElementById('landingPage').style.display = 'none';
+                document.getElementById('agentDashboard').style.display = 'block';
+                
+                // Initialize agent dashboard with the registered user's data
+                initializeAgentDashboard();
+                updateAgentProfile(name, phone, email, mpesa);
+                
+                // Scroll to top of agent dashboard
+                window.scrollTo(0, 0);
+            }, 2000);
+        });
+
+        // Function to update agent profile with registration data
+        function updateAgentProfile(name, phone, email, mpesa) {
+            // Update user name in sidebar
+            const userNameElement = document.querySelector('.agent-dashboard .user-info h3');
+            if (userNameElement) {
+                userNameElement.textContent = name;
+            }
+            
+            // Update avatar initials
+            const avatarElement = document.querySelector('.agent-dashboard .avatar');
+            if (avatarElement) {
+                const initials = name.split(' ').map(n => n[0]).join('').toUpperCase();
+                avatarElement.textContent = initials.length > 2 ? initials.substring(0, 2) : initials;
+            }
+            
+            // Store agent data in local storage for demo purposes
+            localStorage.setItem('arexAgentName', name);
+            localStorage.setItem('arexAgentPhone', phone);
+            localStorage.setItem('arexAgentEmail', email);
+            localStorage.setItem('arexAgentMpesa', mpesa);
+            
+            // Show welcome notification
+            setTimeout(() => {
+                showAlert('👋 Welcome to Arex Agent Network', 
+                    `Welcome ${name}!\n\nYour account has been activated with DIAMOND tier access.\n\nGet started by:\n1. Adding your first referral\n2. Exploring the promotion hub\n3. Completing bounty missions\n\nCheck your email (${email}) for verification.`, 
+                    'success');
+            }, 1000);
+        }
+
+        // Logout functions
+        function logout() {
+            document.getElementById('businessDashboard').style.display = 'none';
+            document.getElementById('landingPage').style.display = 'block';
+            window.scrollTo(0, 0);
+        }
+
+        function logoutAgent() {
+            document.getElementById('agentDashboard').style.display = 'none';
+            document.getElementById('landingPage').style.display = 'block';
+            window.scrollTo(0, 0);
+        }
+
+        // Dashboard navigation - BUSINESS DASHBOARD
+        function showSection(sectionId) {
+            // Hide all sections
+            document.querySelectorAll('.dashboard-section').forEach(section => {
+                section.style.display = 'none';
+            });
+            
+            // Show selected section
+            const selectedSection = document.getElementById(sectionId);
+            if (selectedSection) {
+                selectedSection.style.display = 'block';
+                selectedSection.classList.add('fade-in');
+            }
+            
+            // Update active nav link
+            document.querySelectorAll('.nav-menu a').forEach(link => {
+                link.classList.remove('active');
+            });
+            
+            // Find and activate the clicked link
+            const activeLink = Array.from(document.querySelectorAll('.nav-menu a')).find(link => {
+                return link.getAttribute('onclick')?.includes(sectionId);
+            });
+            
+            if (activeLink) {
+                activeLink.classList.add('active');
+            }
+        }
+
+        // Upgrade Plan function - BUSINESS DASHBOARD
+        function upgradePlan() {
+            alert("Redirecting to plan upgrade page...");
+            // In a real implementation, this would redirect to payment/upgrade flow
+            // For demo, show Platinum Tier selection
+            selectPlan("Platinum Tier", 50000);
+        }
+
+        // Initialize with Lead Growth section - BUSINESS DASHBOARD
+        document.addEventListener('DOMContentLoaded', function() {
+            showSection('lead-growth');
+            
+            // Initialize agent dashboard if needed
+            if (document.getElementById('agentDashboard').style.display === 'block') {
+                initializeAgentDashboard();
+            }
+        });
+
+        // UPDATED AGENT DASHBOARD FUNCTIONS
+        function initializeAgentDashboard() {
+            // Initialize UI when DOM is loaded
+            console.log('Arex Gold Portal loaded - All sections accessible');
+            setupAgentNavigation();
+            setupAgentTabs();
+            setupAgentModals();
+            setupAgentForms();
+            setupAgentButtons();
+            initializeAgentWorkspaceCharts();
+            activateAgentFirstTabs();
+        }
+        
+        // Setup main navigation between sections - AGENT DASHBOARD
+        function setupAgentNavigation() {
+            // Sidebar menu items
+            document.querySelectorAll('.menu-item').forEach(item => {
+                item.addEventListener('click', function() {
+                    const sectionId = this.getAttribute('data-section');
+                    switchAgentSection(sectionId, this);
+                });
+            });
+            
+            // Quick action cards
+            document.querySelectorAll('.referral-card[data-section]').forEach(card => {
+                card.addEventListener('click', function() {
+                    const sectionId = this.getAttribute('data-section');
+                    switchAgentSection(sectionId);
+                });
+            });
+        }
+        
+        // Switch between AGENT dashboard sections
+        function switchAgentSection(sectionId, menuItem = null) {
+            // Update menu active state
+            document.querySelectorAll('.menu-item').forEach(i => i.classList.remove('active'));
+            if (menuItem) {
+                menuItem.classList.add('active');
+            } else {
+                document.querySelector(`.menu-item[data-section="${sectionId}"]`)?.classList.add('active');
+            }
+            
+            // Hide all sections
+            document.querySelectorAll('.dashboard-section').forEach(section => {
+                section.classList.remove('active');
+            });
+            
+            // Show selected section
+            const targetSection = document.getElementById(`agent-${sectionId}-section`);
+            if (targetSection) {
+                targetSection.classList.add('active');
+                
+                // Update page title
+                const sectionTitle = targetSection.querySelector('.section-header h2');
+                if (sectionTitle) {
+                    // Remove tier badge text from title
+                    const titleText = sectionTitle.textContent.replace(/DIAMOND ACCESS|GOLD\+ ACCESS/g, '').trim();
+                    document.getElementById('agentPageTitle').textContent = titleText;
+                } else {
+                    document.getElementById('agentPageTitle').textContent = 'Premium Agent Dashboard';
+                }
+                
+                // Initialize charts if it's the workspace section
+                if (sectionId === 'workspace') {
+                    initializeAgentWorkspaceCharts();
+                }
+            }
+        }
+        
+        // Setup tab functionality - AGENT DASHBOARD
+        function setupAgentTabs() {
+            // Main tabs in referrals section
+            document.querySelectorAll('.tabs .tab').forEach(tab => {
+                tab.addEventListener('click', function() {
+                    const tabId = this.getAttribute('data-tab');
+                    const tabsContainer = this.closest('.tabs');
+                    
+                    // Update tab active state
+                    tabsContainer.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    // Show corresponding tab content
+                    const section = this.closest('.dashboard-section');
+                    section.querySelectorAll('.tab-content').forEach(content => {
+                        content.classList.remove('active');
+                    });
+                    
+                    const tabContent = section.querySelector(`#agent-${tabId}-tab`);
+                    if (tabContent) {
+                        tabContent.classList.add('active');
+                    }
+                });
+            });
+            
+            // Workspace tabs
+            document.querySelectorAll('.workspace-tab').forEach(tab => {
+                tab.addEventListener('click', function() {
+                    const tabId = this.getAttribute('data-workspace-tab');
+                    const tabsContainer = this.closest('.workspace-tabs');
+                    
+                    // Update tab active state
+                    tabsContainer.querySelectorAll('.workspace-tab').forEach(t => t.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    // Show corresponding tab content
+                    const section = document.getElementById('agent-workspace-section');
+                    section.querySelectorAll('.workspace-tab-content').forEach(content => {
+                        content.classList.remove('active');
+                    });
+                    
+                    const tabContent = section.querySelector(`#${tabId}-tab`);
+                    if (tabContent) {
+                        tabContent.classList.add('active');
+                        
+                        // Initialize charts if it's the analytics tab
+                        if (tabId === 'analytics') {
+                            setTimeout(initializeAgentWorkspaceCharts, 100);
+                        }
+                    }
+                });
+            });
+        }
+        
+        // Setup modal functionality - AGENT DASHBOARD
+        function setupAgentModals() {
+            const modals = {
+                agentWithdrawalModal: document.getElementById('agentWithdrawalModal'),
+                agentAddReferralModal: document.getElementById('agentAddReferralModal')
+            };
+            
+            // Open withdrawal modal
+            document.getElementById('withdrawBtn')?.addEventListener('click', () => {
+                modals.agentWithdrawalModal.style.display = 'flex';
+            });
+            
+            // Open add referral modal
+            document.getElementById('agentAddReferralBtn')?.addEventListener('click', () => {
+                modals.agentAddReferralModal.style.display = 'flex';
+            });
+            
+            // Request payout button
+            document.getElementById('agentRequestPayoutBtn')?.addEventListener('click', () => {
+                openAgentWithdrawalModal();
+            });
+            
+            // Generate link button
+            document.getElementById('agentGenerateLinkBtn')?.addEventListener('click', () => {
+                showAlert('🔗 Link Generated', 'New promotion link created successfully!\n\nLink: https://arex.gold/promo/abc123\n\nCopy and share with your network.', 'success');
+            });
+            
+            // Export referrals button
+            document.getElementById('agentExportReferralsBtn')?.addEventListener('click', () => {
+                showAlert('✅ Data Exported', 'Your referrals data has been exported to CSV file.', 'success');
+            });
+            
+            // Run fraud check button
+            document.getElementById('agentRunFraudCheckBtn')?.addEventListener('click', () => {
+                runManualFraudCheck();
+            });
+            
+            // Mark all notifications as read
+            document.getElementById('agentMarkAllReadBtn')?.addEventListener('click', () => {
+                showAlert('✅ Notifications Cleared', 'All notifications have been marked as read.', 'success');
+                // Clear badge
+                const badge = document.querySelector('.menu-item[data-section="notifications"] .badge');
+                if (badge) badge.textContent = '0';
+            });
+            
+            // Refresh workspace button
+            document.getElementById('agentRefreshWorkspaceBtn')?.addEventListener('click', () => {
+                refreshAgentWorkspace();
+            });
+            
+            // View all missions button
+            document.getElementById('agentViewAllMissionsBtn')?.addEventListener('click', () => {
+                showAlert('🎯 All Missions', 'Showing all available bounty missions.\n\n1. Referral Mission - KES 5,000\n2. Conversion Mission - KES 15,000\n3. Revenue Mission - KES 10,000\n\nTotal Available: KES 30,000', 'info');
+            });
+            
+            // Close modal buttons
+            document.querySelectorAll('.modal-close').forEach(button => {
+                button.addEventListener('click', function() {
+                    const modalId = this.getAttribute('data-modal');
+                    if (modals[modalId]) {
+                        modals[modalId].style.display = 'none';
+                    }
+                });
+            });
+            
+            // Close modal when clicking outside
+            window.addEventListener('click', (e) => {
+                Object.values(modals).forEach(modal => {
+                    if (modal && e.target === modal) {
+                        modal.style.display = 'none';
+                    }
+                });
+            });
+        }
+        
+        // Setup form submissions - AGENT DASHBOARD
+        function setupAgentForms() {
+            // Withdrawal form
+            document.getElementById('agentWithdrawalForm')?.addEventListener('submit', function(e) {
+                e.preventDefault();
+                const amount = document.getElementById('withdrawAmount').value;
+                showAlert('✅ Withdrawal Successful', 
+                    `KES ${amount} is being transferred to your M-Pesa.\n\nDIAMOND Tier Benefits:\n• Instant processing (0-5 minutes)\n• Zero transaction fees\n• Priority queue\n\nYou will receive an SMS confirmation shortly.`, 
+                    'success');
+                document.getElementById('agentWithdrawalModal').style.display = 'none';
+            });
+            
+            // Referral form
+            document.getElementById('agentReferralForm')?.addEventListener('submit', function(e) {
+                e.preventDefault();
+                const name = document.getElementById('referralName').value;
+                const phone = document.getElementById('referralPhone').value;
+                const product = document.getElementById('referralProduct').value;
+                
+                if (!name || !phone || !product) {
+                    showAlert('⚠️ Missing Information', 'Please fill in all required fields.', 'warning');
+                    return;
+                }
+                
+                // Simulate fraud check
+                const fraudCheck = document.getElementById('fraudCheck').checked;
+                if (fraudCheck) {
+                    showAlert('🔍 Fraud Check Running', 'Checking referral for fraudulent patterns...', 'info');
+                    
+                    setTimeout(() => {
+                        showAlert('✅ Referral Added Successfully', 
+                            `Referral for ${name} has been added with fraud check passed.\n\nDetails:\n• Phone: ${phone}\n• Product: ${product}\n• Fraud Score: 95/100\n\nReferral is now active and being tracked.`, 
+                            'success');
+                        document.getElementById('agentAddReferralModal').style.display = 'none';
+                        this.reset();
+                        
+                        // Update UI
+                        updateReferralCount();
+                    }, 1500);
+                }
+            });
+            
+            // Notification settings form
+            document.querySelector('.card .btn-gold')?.addEventListener('click', function(e) {
+                if (e.target.closest('.card')) {
+                    e.preventDefault();
+                    showAlert('✅ Settings Saved', 'Your notification preferences have been updated.', 'success');
+                }
+            });
+        }
+        
+        // Setup button actions - AGENT DASHBOARD
+        function setupAgentButtons() {
+            // Logout button
+            document.getElementById('logoutBtn').addEventListener('click', function() {
+                if (confirm('Are you sure you want to logout?')) {
+                    showAlert('👋 Logging Out', 'Your session has been secured. Redirecting to login...', 'info');
+                    logoutAgent();
+                }
+            });
+        }
+        
+        // Activate first tabs in each section - AGENT DASHBOARD
+        function activateAgentFirstTabs() {
+            // Activate first main tab
+            document.querySelectorAll('.tabs').forEach(tabs => {
+                const firstTab = tabs.querySelector('.tab');
+                if (firstTab && !firstTab.classList.contains('active')) {
+                    firstTab.click();
+                }
+            });
+            
+            // Activate first workspace tab if needed
+            const workspaceTabs = document.querySelector('.workspace-tabs');
+            if (workspaceTabs) {
+                const firstWorkspaceTab = workspaceTabs.querySelector('.workspace-tab');
+                if (firstWorkspaceTab && !firstWorkspaceTab.classList.contains('active')) {
+                    firstWorkspaceTab.click();
+                }
+            }
+        }
+        
+        // Initialize workspace charts - AGENT DASHBOARD
+        function initializeAgentWorkspaceCharts() {
+            // Referral chart data
+            const referralData = [
+                { label: 'Mon', value: 12 },
+                { label: 'Tue', value: 18 },
+                { label: 'Wed', value: 15 },
+                { label: 'Thu', value: 22 },
+                { label: 'Fri', value: 25 },
+                { label: 'Sat', value: 20 },
+                { label: 'Sun', value: 16 }
+            ];
+            
+            // Earnings chart data
+            const earningsData = [
+                { label: 'Week 1', value: 45000 },
+                { label: 'Week 2', value: 52000 },
+                { label: 'Week 3', value: 61000 },
+                { label: 'Week 4', value: 75000 }
+            ];
+            
+            // Create referral chart
+            const referralChart = document.getElementById('referralChart');
+            if (referralChart) {
+                referralChart.innerHTML = '';
+                const maxReferral = Math.max(...referralData.map(d => d.value));
+                
+                referralData.forEach((item, index) => {
+                    const bar = document.createElement('div');
+                    bar.className = 'chart-bar';
+                    bar.style.height = `${(item.value / maxReferral) * 100}%`;
+                    bar.style.left = `${(index / referralData.length) * 100}%`;
+                    bar.style.width = `${80 / referralData.length}%`;
+                    bar.style.marginLeft = `${(20 / referralData.length) / 2}%`;
+                    bar.title = `${item.label}: ${item.value} referrals`;
+                    
+                    const label = document.createElement('div');
+                    label.className = 'chart-label';
+                    label.textContent = item.label;
+                    label.style.left = `${(index / referralData.length) * 100}%`;
+                    label.style.width = `${80 / referralData.length}%`;
+                    label.style.marginLeft = `${(20 / referralData.length) / 2}%`;
+                    
+                    referralChart.appendChild(bar);
+                    referralChart.appendChild(label);
+                });
+            }
+            
+            // Create earnings chart
+            const earningsChart = document.getElementById('earningsChart');
+            if (earningsChart) {
+                earningsChart.innerHTML = '';
+                const maxEarning = Math.max(...earningsData.map(d => d.value));
+                
+                earningsData.forEach((item, index) => {
+                    const bar = document.createElement('div');
+                    bar.className = 'chart-bar';
+                    bar.style.height = `${(item.value / maxEarning) * 100}%`;
+                    bar.style.left = `${(index / earningsData.length) * 100}%`;
+                    bar.style.width = `${80 / earningsData.length}%`;
+                    bar.style.marginLeft = `${(20 / earningsData.length) / 2}%`;
+                    bar.style.background = 'linear-gradient(to top, var(--mpesa-green), #00CC88)';
+                    bar.title = `${item.label}: KES ${item.value.toLocaleString()}`;
+                    
+                    const label = document.createElement('div');
+                    label.className = 'chart-label';
+                    label.textContent = item.label;
+                    label.style.left = `${(index / earningsData.length) * 100}%`;
+                    label.style.width = `${80 / earningsData.length}%`;
+                    label.style.marginLeft = `${(20 / earningsData.length) / 2}%`;
+                    
+                    earningsChart.appendChild(bar);
+                    earningsChart.appendChild(label);
+                });
+            }
+        }
+        
+        // Refresh workspace - AGENT DASHBOARD
+        function refreshAgentWorkspace() {
+            showAlert('🔄 Workspace Refreshed', 'Your workspace has been refreshed with the latest data and analytics.', 'info');
+            initializeAgentWorkspaceCharts();
+        }
+        
+        // Workspace tool functions - AGENT DASHBOARD
+        function openWorkspaceTool(tool) {
+            const tools = {
+                'analytics': '📊 Advanced Analytics Tool',
+                'marketing': '📱 Marketing Hub',
+                'performance': '🏆 Performance Tracker',
+                'automation': '🤖 Automation Tools',
+                'commissions': '💰 Commission Calculator',
+                'networking': '👥 Agent Network'
+            };
+            
+            if (tools[tool]) {
+                showAlert(tools[tool], `Opening ${tools[tool]}...\n\nDIAMOND Tier Feature Activated\nLoading premium interface...`, 'info');
+            }
+        }
+        
+        function downloadResource(resource) {
+            const resources = {
+                'banners': 'Social Media Banners Pack',
+                'scripts': 'Sales Scripts Collection',
+                'presentations': 'Product Presentations',
+                'templates': 'Email Templates Pack',
+                'guides': 'Success Guides',
+                'calculator': 'ROI Calculator'
+            };
+            
+            if (resources[resource]) {
+                showAlert('📥 Download Started', `${resources[resource]} download has started.\n\nFile: ${resource}.zip (15 MB)\nEstimated time: 10 seconds`, 'success');
+            }
+        }
+        
+        function downloadResourcePack() {
+            showAlert('📦 Download All Resources', 'Downloading complete resource pack...\n\nTotal size: 85 MB\nContains: 6 premium resource packs\nEstimated time: 45 seconds', 'info');
+        }
+        
+        function generatePerformanceReport() {
+            showAlert('📈 Performance Report Generated', 'Your performance report has been generated and is ready for download.\n\nReport includes:\n• Weekly performance analysis\n• Channel effectiveness\n• Revenue projections\n• Improvement recommendations\n\nClick OK to download the PDF report.', 'success');
+        }
+        
+        function playTrainingVideo() {
+            showAlert('🎬 Training Video', 'Playing "Advanced Referral Strategies"\n\nDuration: 25 minutes\nInstructor: Sarah Manager (Top 1% Agent)\nTopics Covered:\n• Prospecting techniques\n• Conversion optimization\n• Follow-up strategies\n• Scaling your network', 'info');
+        }
+        
+        function startTrainingProgram() {
+            showAlert('🎓 Training Program Started', 'You have been enrolled in the Premium Agent Training Program.\n\nProgram includes:\n• 8 comprehensive modules\n• Weekly assignments\n• Personal coaching sessions\n• Certificate of completion\n\nCheck your email for program details.', 'success');
+        }
+        
+        function contactSupport() {
+            showAlert('📞 Contacting Support', 'Connecting you with priority DIAMOND tier support...\n\nSupport Options:\n1. Call: 0700 123 456 (24/7)\n2. WhatsApp: +254 700 123 456\n3. Email: support@arexgold.com\n\nAverage wait time: < 1 minute', 'info');
+        }
+        
+        function scheduleMeeting() {
+            const date = prompt('Enter preferred date for meeting (YYYY-MM-DD):');
+            const time = prompt('Enter preferred time (HH:MM):');
+            
+            if (date && time) {
+                showAlert('📅 Meeting Scheduled', `Your 1-on-1 meeting with Sarah Manager has been scheduled.\n\nDate: ${date}\nTime: ${time}\nDuration: 30 minutes\nPlatform: Zoom\n\nA calendar invitation has been sent to your email.`, 'success');
+            }
+        }
+        
+        function openKnowledgeBase() {
+            showAlert('📚 Knowledge Base', 'Opening comprehensive knowledge base...\n\nCategories:\n• Getting Started\n• Advanced Strategies\n• Troubleshooting\n• Best Practices\n• Video Tutorials\n• FAQ', 'info');
+        }
+        
+        function openArticle(article) {
+            const articles = {
+                'setup': 'Account Setup Guide',
+                'first-referral': 'Your First Referral Guide',
+                'withdrawal': 'First Withdrawal Process',
+                'analytics': 'Analytics Deep Dive',
+                'automation': 'Automation Strategies',
+                'scaling': 'Scaling Your Business',
+                'fraud-issues': 'Fraud Detection Troubleshooting',
+                'payment-issues': 'Payment Issues Resolution',
+                'technical': 'Technical Support Guide'
+            };
+            
+            if (articles[article]) {
+                showAlert(`📖 ${articles[article]}`, `Opening article: ${articles[article]}\n\nThis comprehensive guide will help you master this topic.\nEstimated read time: 5-10 minutes`, 'info');
+            }
+        }
+        
+        // Referral actions - AGENT DASHBOARD
+        window.viewReferral = function(id) {
+            showAlert('📋 Referral Details', 
+                `Viewing details for ${id}\n\nName: ${getRandomName()}\nStatus: Active\nCommission: KES 2,500\nAdded: Today\n\nFraud Check: Passed ✓`, 
+                'info');
+        };
+        
+        window.trackReferral = function(id) {
+            showAlert('📍 Tracking Referral', 
+                `Tracking activity for ${id}\n\nLast Activity: Today, 15:30\nStatus: Viewed product page\nNext Follow-up: Tomorrow\n\nConversion Probability: 65%`, 
+                'info');
+        };
+        
+        window.followUp = function(id) {
+            showAlert('📞 Follow Up Required', 
+                `Follow up with referral ${id}\n\nSuggested Actions:\n1. Send WhatsApp reminder\n2. Share product link\n3. Schedule call for tomorrow\n\nCommission at stake: KES 15,000`, 
+                'warning');
+        };
+        
+        window.contactReferral = function(id) {
+            showAlert('📱 Contact Referral', 
+                `Contact options for ${id}\n\nPhone: 07XX XXX XXX\nEmail: email@example.com\n\nPreferred Contact: WhatsApp\nBest Time: 2-4 PM`, 
+                'info');
+        };
+        
+        window.viewReceipt = function(id) {
+            showAlert('🧾 Payment Receipt', 
+                `Receipt for ${id}\n\nAmount: KES 2,500\nDate: Yesterday\nStatus: Paid\nTransaction ID: MP-TX-${Math.floor(Math.random() * 100000)}\n\nM-Pesa Confirmation: Sent`, 
+                'success');
+        };
+        
+        // Fraud detection - AGENT DASHBOARD
+        window.runManualFraudCheck = function() {
+            showAlert('🔍 Running Fraud Check', 'Scanning all referrals for fraudulent patterns...', 'info');
+            
+            setTimeout(() => {
+                showAlert('✅ Fraud Check Complete', 
+                    `All referrals scanned successfully.\n\nResults:\n• Total Referrals: 142\n• Clean: 140 (98.6%)\n• Flagged: 0\n• Suspicious: 2 (1.4%)\n\nYour fraud score: 98% ✓`, 
+                    'success');
+            }, 2000);
+        };
+        
+        window.updateMpesaNumber = function() {
+            const newNumber = prompt('Enter new M-Pesa number:');
+            if (newNumber && newNumber.match(/^07[0-9]{8}$/)) {
+                showAlert('✅ M-Pesa Updated', 
+                    `Your M-Pesa number has been updated to: ${newNumber}\n\nA verification SMS has been sent.`, 
+                    'success');
+            } else if (newNumber) {
+                showAlert('⚠️ Invalid Number', 'Please enter a valid Kenyan phone number (07XXXXXXXX).', 'warning');
+            }
+        };
+        
+        window.openWithdrawalModal = function() {
+            document.getElementById('agentWithdrawalModal').style.display = 'flex';
+        };
+        
+        // Quick add referral - AGENT DASHBOARD
+        window.addQuickReferral = function() {
+            const name = document.getElementById('quickName').value;
+            const phone = document.getElementById('quickPhone').value;
+            const product = document.getElementById('quickProduct').value;
+            
+            if (!name || !phone) {
+                showAlert('⚠️ Missing Information', 'Please enter name and phone number.', 'warning');
+                return;
+            }
+            
+            showAlert('✅ Quick Referral Added', 
+                `Referral for ${name} added successfully.\n\nA full fraud check will run in the background.`, 
+                'success');
+            
+            // Clear form
+            document.getElementById('quickName').value = '';
+            document.getElementById('quickPhone').value = '';
+            updateReferralCount();
+        };
+        
+        // Helper functions - SHARED
+        function showAlert(title, message, type = 'info') {
+            const icon = type === 'success' ? '✅' : type === 'warning' ? '⚠️' : type === 'error' ? '❌' : 'ℹ️';
+            alert(`${icon} ${title}\n\n${message}`);
+        }
+        
+        function getRandomName() {
+            const names = ['James Muriuki', 'Sarah Wangari', 'David Ochieng', 'Linda Mwangi', 'Michael Kamau'];
+            return names[Math.floor(Math.random() * names.length)];
+        }
+        
+        function updateReferralCount() {
+            // In a real app, this would update from backend
+            const badge = document.querySelector('.menu-item[data-section="referrals"] .badge');
+            if (badge) {
+                const current = parseInt(badge.textContent) || 0;
+                badge.textContent = current + 1;
+            }
+        }
+
+        // Close modals on outside click
+        document.querySelectorAll('.modal').forEach(modal => {
+            modal.addEventListener('click', function(e) {
+                if (e.target === this) {
+                    this.style.display = 'none';
+                }
+            });
+        });
+
+        // Close modal on Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                document.querySelectorAll('.modal').forEach(modal => {
+                    modal.style.display = 'none';
+                });
+            }
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 100,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu
+                    document.querySelector('.nav-links').classList.remove('active');
+                }
+            });
+        });
+
+        // Simulate live leads counter for business dashboard
+        setInterval(() => {
+            const leadsElement = document.querySelector('#lead-growth .card-value');
+            if (leadsElement && leadsElement.textContent === '62') {
+                const currentLeads = parseInt(leadsElement.textContent);
+                if (currentLeads > 0) {
+                    // Simulate lead consumption (random 0-2 leads every 30 seconds)
+                    const newLeads = Math.max(0, currentLeads - Math.floor(Math.random() * 3));
+                    leadsElement.textContent = newLeads;
+                    
+                    // Add animation
+                    leadsElement.style.color = 'var(--mpesa-green)';
+                    setTimeout(() => {
+                        leadsElement.style.color = '#f5f5f5';
+                    }, 500);
+                }
+            }
+        }, 30000);
+    </script>
+</body>
+</html>

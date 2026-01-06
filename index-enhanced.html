@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Agent Dashboard - Complete Registration</title>
+    <style>
+        /* Add to your existing CSS */
+        .registration-steps {
+            display: flex;
+            justify-content: space-between;
+            margin: 20px 0;
+            position: relative;
+        }
+        .step {
+            text-align: center;
+            flex: 1;
+            position: relative;
+            z-index: 1;
+        }
+        .step-number {
+            width: 30px;
+            height: 30px;
+            background: #ddd;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 10px;
+        }
+        .step.active .step-number {
+            background: #667eea;
+            color: white;
+        }
+        .step-line {
+            position: absolute;
+            top: 15px;
+            left: 15%;
+            right: 15%;
+            height: 2px;
+            background: #ddd;
+            z-index: 0;
+        }
+        
+        .form-section {
+            display: none;
+        }
+        .form-section.active {
+            display: block;
+            animation: fadeIn 0.5s;
+        }
+        
+        .btn-group {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+        }
+        .btn-next, .btn-prev {
+            flex: 1;
+            padding: 12px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        .btn-next {
+            background: #667eea;
+            color: white;
+        }
+        .btn-prev {
+            background: #f0f0f0;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <!-- Add this to your login page registration section -->
+    <div id="multiStepRegistration" style="display: none;">
+        <div class="registration-steps">
+            <div class="step active" data-step="1">
+                <div class="step-number">1</div>
+                <div>Personal Info</div>
+            </div>
+            <div class="step" data-step="2">
+                <div class="step-number">2</div>
+                <div>Agency Details</div>
+            </div>
+            <div class="step" data-step="3">
+                <div class="step-number">3</div>
+                <div>Credentials</div>
+            </div>
+            <div class="step-line"></div>
+        </div>
+        
+        <div class="form-section active" data-section="1">
+            <h3>Personal Information</h3>
+            <input type="text" placeholder="Full Name" required>
+            <input type="email" placeholder="Email" required>
+            <input type="tel" placeholder="Phone Number">
+            <input type="text" placeholder="Address">
+        </div>
+        
+        <div class="form-section" data-section="2">
+            <h3>Agency Details</h3>
+            <input type="text" placeholder="Agency Name">
+            <input type="text" placeholder="License Number">
+            <input type="text" placeholder="Years of Experience">
+            <select>
+                <option value="">Select Specialization</option>
+                <option>Residential</option>
+                <option>Commercial</option>
+                <option>Rental</option>
+                <option>Luxury</option>
+            </select>
+        </div>
+        
+        <div class="form-section" data-section="3">
+            <h3>Account Credentials</h3>
+            <input type="password" placeholder="Create Password" required>
+            <input type="password" placeholder="Confirm Password" required>
+            <label>
+                <input type="checkbox" required>
+                I agree to Terms & Conditions
+            </label>
+        </div>
+        
+        <div class="btn-group">
+            <button class="btn-prev" onclick="prevStep()">Previous</button>
+            <button class="btn-next" onclick="nextStep()">Next</button>
+        </div>
+    </div>
+    
+    <script>
+        let currentStep = 1;
+        const totalSteps = 3;
+        
+        function nextStep() {
+            if (currentStep < totalSteps) {
+                document.querySelector(`.step[data-step="${currentStep}"]`).classList.remove('active');
+                document.querySelector(`.form-section[data-section="${currentStep}"]`).classList.remove('active');
+                
+                currentStep++;
+                
+                document.querySelector(`.step[data-step="${currentStep}"]`).classList.add('active');
+                document.querySelector(`.form-section[data-section="${currentStep}"]`).classList.add('active');
+                
+                if (currentStep === totalSteps) {
+                    document.querySelector('.btn-next').textContent = 'Submit';
+                    document.querySelector('.btn-next').onclick = submitRegistration;
+                }
+            }
+        }
+        
+        function prevStep() {
+            if (currentStep > 1) {
+                document.querySelector(`.step[data-step="${currentStep}"]`).classList.remove('active');
+                document.querySelector(`.form-section[data-section="${currentStep}"]`).classList.remove('active');
+                
+                currentStep--;
+                
+                document.querySelector(`.step[data-step="${currentStep}"]`).classList.add('active');
+                document.querySelector(`.form-section[data-section="${currentStep}"]`).classList.add('active');
+                
+                document.querySelector('.btn-next').textContent = 'Next';
+                document.querySelector('.btn-next').onclick = nextStep;
+            }
+        }
+        
+        function submitRegistration() {
+            alert('Registration submitted successfully!');
+            // In real app: Send data to server
+        }
+    </script>
+</body>
+</html>
