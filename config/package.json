@@ -1,0 +1,18 @@
+{
+  "name": "arex-premium",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "dev": "genkit start -- npm run serve",
+    "serve": "firebase emulators:start",
+    "deploy": "firebase deploy --only functions,hosting",
+    "genkit:ui": "genkit ui:start"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "genkit-cli": "^1.27.0"
+  }
+}
