@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Arex Platform Status</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; }
+        .status { padding: 20px; margin: 10px 0; border-radius: 10px; }
+        .online { background: #d4edda; border: 1px solid #c3e6cb; }
+        .offline { background: #f8d7da; border: 1px solid #f5c6cb; }
+        .url { background: #e9ecef; padding: 10px; border-radius: 5px; font-family: monospace; }
+    </style>
+</head>
+<body>
+    <h1>Arex Platform Status</h1>
+    
+    <div class="status online">
+        <h2>✅ Firebase Hosting</h2>
+        <p>Running on port 5000</p>
+        <div class="url">https://5000-cs-f787c19f-28f4-434a-ae30-74ac62a35239.cs-europe-west1-onse.cloudshell.dev/</div>
+    </div>
+    
+    <div class="status online">
+        <h2>✅ OAuth Server</h2>
+        <p>Running on port 9006</p>
+        <div class="url">https://9006-cs-f787c19f-28f4-434a-ae30-74ac62a35239.cs-europe-west1-onse.cloudshell.dev/</div>
+    </div>
+    
+    <div class="status online">
+        <h2>✅ Cloud Functions</h2>
+        <p>Deployed and working</p>
+        <div class="url">https://us-central1-arex-ltd-42154393-a701b-fce9f.cloudfunctions.net/testSetup</div>
+    </div>
+    
+    <div style="margin-top: 30px; padding: 20px; background: #fff3cd; border-radius: 10px;">
+        <h3>Your OAuth Code:</h3>
+        <div class="url">4/0ATX87lPv7AU2P16ogF_8K7vznek6kE3IoW-S4BWFaAyYw47iHAJ3bCZNZZR3ZQ_WmbusyA</div>
+        <p style="margin-top: 10px;">
+            <a href="https://9006-cs-f787c19f-28f4-434a-ae30-74ac62a35239.cs-europe-west1-onse.cloudshell.dev/?code=4/0ATX87lPv7AU2P16ogF_8K7vznek6kE3IoW-S4BWFaAyYw47iHAJ3bCZNZZR3ZQ_WmbusyA&state=22851381" 
+               target="_blank" 
+               style="background: #007bff; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px;">
+               ✅ Complete OAuth Flow
+            </a>
+        </p>
+    </div>
+</body>
+</html>
